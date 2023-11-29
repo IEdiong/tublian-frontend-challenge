@@ -31,6 +31,12 @@
       }
     },
     {
+      "files": ["*.js"],
+      "parserOptions": {
+        "ecmaVersion": "latest"
+      }
+    },
+    {
       "files": ["*.html"],
       "extends": [
         "plugin:@angular-eslint/template/recommended",
