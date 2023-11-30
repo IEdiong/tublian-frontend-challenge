@@ -17,12 +17,14 @@ module.exports = {
       colors: {
         white: "#FEFEFE",
         tertiary: "#B7B7B7",
+        black: "#121212",
+        placeholder: "#696969",
+        secondary: "#888",
         gold: {
           100: "#FEEFC3",
           200: "#FEE38B",
           300: "#FDD649",
         },
-        black: "#121212",
       },
       backgroundImage: {
         "illustration-one": "url('/assets/illustration-get-started.png')",
