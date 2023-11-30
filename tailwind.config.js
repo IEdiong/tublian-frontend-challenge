@@ -14,6 +14,13 @@ module.exports = {
           "sans-serif",
         ],
       },
+      colors: {
+        white: "#FEFEFE",
+        tertiary: "#B7B7B7",
+        base: {
+          900: "#121212",
+        },
+      },
     },
   },
   plugins: [],
