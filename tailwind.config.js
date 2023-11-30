@@ -21,6 +21,12 @@ module.exports = {
           900: "#121212",
         },
       },
+      backgroundImage: {
+        "illustration-one": "url('/assets/illustration-get-started.png')",
+      },
+      backgroundPosition: {
+        "top-4": "center top -0.25rem",
+      },
     },
   },
   plugins: [],
