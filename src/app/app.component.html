@@ -1,6 +1,6 @@
 <main class="flex min-h-screen">
   <div class="bg-illustration-one bg-top-4 flex-1"></div>
-  <div class="flex-1 pb-[47px] ps-10 pt-16">
+  <div class="relative flex-1 pb-[47px] ps-10 pt-16">
     <div>
       <a
         href="https://tublian.com"
@@ -13,20 +13,28 @@
     <h1 class="mt-10 text-4xl font-bold leading-[52px] text-white">
       Get Started
     </h1>
-    <p class="mt-[14px] font-medium">
-      Start recruiting streetcred developers, Today!!
-    </p>
+    <div class="mt-[14px] flex max-w-[405px] flex-col gap-7">
+      <p class="font-medium">Start recruiting streetcred developers, Today!!</p>
 
-    <p class="text-tertiary">
-      Already have an account?
-      <a
-        class="relative font-bold text-white after:absolute after:-bottom-px after:left-0 after:h-px after:w-full after:bg-white after:content-['']"
-        href="https://www.tublian.com/login"
-        >Log in</a
+      <button
+        class="bg-gold-300 hover:bg-gold-200 active:bg-gold-100 rounded-full px-4 py-2 font-medium text-black transition-all duration-300 ease-in-out"
       >
-    </p>
+        Proceed
+      </button>
 
-    <div class="text-tertiary flex items-start gap-5">
+      <p class="text-tertiary">
+        Already have an account?
+        <a
+          class="relative font-bold text-white after:absolute after:-bottom-px after:left-0 after:h-px after:w-full after:bg-white after:content-['']"
+          href="https://www.tublian.com/login"
+          >Log in</a
+        >
+      </p>
+    </div>
+
+    <div
+      class="text-tertiary absolute bottom-[47px] flex w-fit items-start gap-5"
+    >
       <a href="https://www.tublian.com/privacy">Privacy Policy</a>
       <a href="https://www.tublian.com/terms">Terms</a>
     </div>
