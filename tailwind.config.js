@@ -7,6 +7,12 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['"Space Grotesk"', ...defaultTheme.fontFamily.sans],
+        logo: [
+          '"ReceptsNFW01-Regular"',
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
       },
     },
   },
