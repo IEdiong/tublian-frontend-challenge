@@ -10,3 +10,19 @@
     color: #cfcfcf;
   }
 }
+
+@layer components {
+  .step-btn {
+    @apply text-sm font-medium;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(
+    109deg,
+    #fbda61 0%,
+    rgba(255, 90, 205, 0.84) 86.08%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+}

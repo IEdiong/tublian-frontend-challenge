@@ -1,0 +1,12 @@
+<div class="flex gap-3">
+  <p
+    *ngFor="let title of stepsTitle; index as i"
+    class="step-btn"
+    [ngClass]="{
+      'text-placeholder': !(currentStep >= i + 1),
+      'text-gradient text-transparent': currentStep >= i + 1
+    }"
+  >
+    {{ title }}
+  </p>
+</div>

@@ -1,7 +1,7 @@
 <main class="flex min-h-screen">
-  <div class="bg-illustration-one bg-top-4 flex-1"></div>
-  <div class="relative flex-1 pb-[47px] ps-10 pt-16">
-    <div>
+  <div class="flex-1 bg-illustration-one bg-top-4"></div>
+  <form class="relative flex-1 pb-[47px] ps-10 pt-16">
+    <div class="flex items-center gap-[19px]">
       <a
         href="https://tublian.com"
         class="flex w-fit items-center gap-[3px] font-logo text-[13px] text-white"
@@ -9,6 +9,7 @@
         <img src="../assets/logo.svg" alt="" aria-hidden="true" />
         <span> Tublian </span>
       </a>
+      <tbc-stepper [currentStep]="currentStep"></tbc-stepper>
     </div>
     <h1 class="mt-10 text-4xl font-bold leading-[52px] text-white">
       Get Started
@@ -18,19 +19,19 @@
 
       <fieldset class="flex flex-col gap-[14px]">
         <input
-          class="placeholder:text-placeholder border-b-secondary border-b-[1px] bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize focus-visible:border-b-white focus-visible:outline-none"
+          class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
           type="text"
           placeholder="First name"
         />
         <input
-          class="placeholder:text-placeholder border-b-secondary border-b-[1px] bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize focus-visible:border-b-white focus-visible:outline-none"
+          class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
           type="text"
           placeholder="Last name"
         />
       </fieldset>
 
       <button
-        class="bg-gold-300 hover:bg-gold-200 active:bg-gold-100 rounded-full px-4 py-2 font-medium text-black transition-all duration-300 ease-in-out"
+        class="rounded-full bg-gold-300 px-4 py-2 font-medium text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
       >
         Proceed
       </button>
@@ -46,10 +47,10 @@
     </div>
 
     <div
-      class="text-tertiary absolute bottom-[47px] flex w-fit items-start gap-5"
+      class="absolute bottom-[47px] flex w-fit items-start gap-5 text-tertiary"
     >
       <a href="https://www.tublian.com/privacy">Privacy Policy</a>
       <a href="https://www.tublian.com/terms">Terms</a>
     </div>
-  </div>
+  </form>
 </main>
