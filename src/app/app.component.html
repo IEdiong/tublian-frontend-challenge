@@ -58,12 +58,12 @@
             >
           </p>
         </div>
-        <div class="w-fit bg-white text-black">
+        <!-- <div class="w-fit bg-white text-black">
           <pre>
           {{ onboardingForm.value | json }}
         </pre
           >
-        </div>
+        </div> -->
 
         <div
           class="absolute bottom-[47px] flex w-fit items-start gap-5 text-tertiary"
@@ -77,7 +77,7 @@
 
     <!-- Create Account -->
     <div *ngIf="currentStep === 2" class="flex min-h-screen">
-      <div class="flex-1 bg-illustration-one bg-top-4"></div>
+      <div class="bg-illustration-two flex-1 bg-top-4"></div>
       <div class="relative flex-1 pb-[47px] ps-10 pt-16">
         <div class="flex items-center gap-[19px]">
           <a
@@ -90,11 +90,12 @@
           <tbc-stepper [currentStep]="currentStep"></tbc-stepper>
         </div>
         <h1 class="mt-10 text-4xl font-bold leading-[52px] text-white">
-          Get Started
+          Create Account
         </h1>
         <div class="mt-[14px] flex max-w-[405px] flex-col gap-7">
           <p class="font-medium">
-            Start recruiting streetcred developers, Today!!
+            Creating account for
+            <span class="text-accent-blue">&#64;John Doe</span>
           </p>
 
           <fieldset formGroupName="name" class="flex flex-col gap-[14px]">
@@ -103,40 +104,92 @@
               formControlName="firstName"
               id="first-name"
               class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-              type="text"
-              placeholder="First name"
+              type="email"
+              placeholder="Email"
             />
-            <label for="last-name" class="sr-only">Last Name</label>
-            <input
-              formControlName="lastName"
-              id="last-name"
-              class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-              type="text"
-              placeholder="Last name"
-            />
+            <div class="password-input">
+              <label for="last-name" class="sr-only">Last Name</label>
+              <input
+                formControlName="lastName"
+                id="last-name"
+                class="w-full border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
+                type="password"
+                placeholder="Password"
+              />
+              <div class="mt-2 flex items-start gap-6 text-xs text-secondary">
+                <div class="flex flex-col gap-2">
+                  <p class="flex items-center gap-2">
+                    <img
+                      src="../assets/tick-circle.svg"
+                      alt=""
+                      class="h-[14px] w-[14px] flex-shrink-0"
+                    />
+                    <span>8 Characters minimum</span>
+                  </p>
+                  <p class="flex items-center gap-2">
+                    <img
+                      src="../assets/tick-circle.svg"
+                      alt=""
+                      class="h-[14px] w-[14px] flex-shrink-0"
+                    />
+                    <span>One symbol character</span>
+                  </p>
+                </div>
+                <p class="flex items-center gap-2">
+                  <img
+                    src="../assets/tick-circle.svg"
+                    alt=""
+                    class="h-[14px] w-[14px] flex-shrink-0"
+                  />
+                  <span>One uppercase character</span>
+                </p>
+              </div>
+            </div>
           </fieldset>
 
-          <button
-            class="rounded-full bg-gold-300 px-4 py-2 font-medium text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
-          >
-            Proceed
-          </button>
-
-          <p class="text-tertiary">
-            Already have an account?
-            <a
-              class="relative font-bold text-white after:absolute after:-bottom-px after:left-0 after:h-px after:w-full after:bg-white after:content-['']"
-              href="https://www.tublian.com/login"
-              >Log in</a
+          <div class="flex flex-col gap-[14px]">
+            <button
+              class="rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
             >
-          </p>
+              Create account
+            </button>
+
+            <p
+              class="after:bg-horizontal-rule relative flex items-center justify-center after:absolute after:left-0 after:top-1/2 after:-z-10 after:h-px after:w-full after:content-['']"
+            >
+              <span
+                class="w-fit bg-black px-2 text-center text-sm font-medium text-tertiary"
+              >
+                Or
+              </span>
+            </p>
+
+            <button
+              class="bg-gradient group rounded-full p-px"
+              aria-labelledby="google-text"
+            >
+              <span
+                class="flex items-center justify-center gap-2 rounded-full bg-black px-2 py-3 font-medium text-white transition-all duration-300 ease-in-out group-hover:bg-transparent"
+              >
+                <img
+                  src="../assets/google-logo.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="h-6 w-6"
+                />
+                <span id="google-text">Sign up with Google</span>
+              </span>
+            </button>
+          </div>
         </div>
-        <div class="w-fit bg-white text-black">
-          <pre>
-          {{ onboardingForm.value | json }}
-        </pre
+        <p class="mt-3 text-tertiary">
+          Already have an account?
+          <a
+            class="relative font-bold text-white after:absolute after:-bottom-px after:left-0 after:h-px after:w-full after:bg-white after:content-['']"
+            href="https://www.tublian.com/login"
+            >Log in</a
           >
-        </div>
+        </p>
 
         <div
           class="absolute bottom-[47px] flex w-fit items-start gap-5 text-tertiary"

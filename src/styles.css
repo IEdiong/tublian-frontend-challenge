@@ -26,3 +26,30 @@
   background-clip: text;
   -webkit-background-clip: text;
 }
+
+.bg-illustration-two {
+  background-image: url("./assets/bg-safari.svg"), url("./assets/bg-bl.svg"),
+    url("./assets/bg-tr.svg"), url("./assets/bg-spiral-wave.svg"),
+    linear-gradient(180deg, #fdd649 0%, #bcc83d 100%);
+  background-position:
+    center,
+    bottom 25px left 4px,
+    top 18px right 34px,
+    center,
+    center;
+  background-repeat: no-repeat;
+  background-size:
+    554px 347px,
+    177px 70px,
+    177px 70px,
+    813px 804px,
+    100%;
+}
+
+.bg-gradient {
+  background: linear-gradient(
+    109deg,
+    #fbda61 0%,
+    rgba(255, 90, 205, 0.84) 86.08%
+  );
+}
