@@ -155,7 +155,7 @@
             </button>
 
             <p
-              class="after:bg-horizontal-rule relative flex items-center justify-center after:absolute after:left-0 after:top-1/2 after:-z-10 after:h-px after:w-full after:content-['']"
+              class="relative flex items-center justify-center after:absolute after:left-0 after:top-1/2 after:-z-10 after:h-px after:w-full after:bg-horizontal-rule after:content-['']"
             >
               <span
                 class="w-fit bg-black px-2 text-center text-sm font-medium text-tertiary"
@@ -169,7 +169,7 @@
               aria-labelledby="google-text"
             >
               <span
-                class="flex items-center justify-center gap-2 rounded-full bg-black px-2 py-3 font-medium text-white transition-all duration-300 ease-in-out group-hover:bg-transparent"
+                class="flex items-center justify-center gap-2 rounded-full bg-black px-2 py-3 font-medium text-white transition-all duration-300 ease-in-out group-hover:bg-transparent group-active:bg-transparent"
               >
                 <img
                   src="../assets/google-logo.svg"
@@ -200,5 +200,127 @@
       </div>
     </div>
     <!-- Create Account -->
+
+    <!-- Account Setup -->
+    <div
+      *ngIf="currentStep === 3"
+      class="relative min-h-screen flex-1 pb-[47px] pt-16"
+    >
+      <div class="px-[103px]">
+        <div class="flex items-center justify-between gap-[19px]">
+          <a
+            href="https://tublian.com"
+            class="flex w-fit items-center gap-[3px] font-logo text-[13px] text-white"
+          >
+            <img src="../assets/logo.svg" alt="" aria-hidden="true" />
+            <span> Tublian </span>
+          </a>
+          <tbc-stepper [currentStep]="currentStep"></tbc-stepper>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-10">
+        <div class="flex flex-col gap-[14px] text-center">
+          <h1 class="mt-10 text-4xl font-bold leading-[52px] text-white">
+            How are you planning to use Tublian?
+          </h1>
+          <p class="font-medium">
+            We will customize your experience based on your option.
+          </p>
+        </div>
+
+        <!-- Radio Buttons -->
+        <div class="flex items-center justify-center gap-7 text-center">
+          <div
+            class="bg-gradient relative h-[288px] w-[250px] cursor-pointer rounded-[20px] p-px"
+          >
+            <img
+              class="absolute right-[14px] top-[14px]"
+              src="../assets/tick-circle-gradient.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <div
+              class="bg-card-default flex h-[286px] w-[248px] flex-col items-center rounded-[20px] px-5 pt-[46px]"
+            >
+              <img
+                src="../assets/illustration-team-project.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <h2 class="mt-[18px] text-2xl font-bold text-white">
+                Team Projects
+              </h2>
+              <p class="mt-[6px]">Hire developers for team projects.</p>
+            </div>
+          </div>
+          <div
+            class="bg-card-hover group relative h-[288px] w-[250px] cursor-pointer rounded-[20px] p-px"
+          >
+            <img
+              class="absolute right-[14px] top-[14px]"
+              src="../assets/tick-circle-state.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <div
+              class="bg-card-default group-hover:bg-card-hover flex h-[286px] w-[248px] flex-col items-center rounded-[20px] px-5 pt-[46px] transition-all duration-300 ease-in-out"
+            >
+              <img
+                class="h-[116px]"
+                src="../assets/illustration-personal-project.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <h2 class="mt-[18px] text-2xl font-bold text-white">
+                Personal Projects
+              </h2>
+              <p class="mt-[6px]">Hire developers for personal projects.</p>
+            </div>
+          </div>
+          <div
+            class="bg-card-hover group relative h-[288px] w-[250px] cursor-pointer rounded-[20px] p-px"
+          >
+            <img
+              class="absolute right-[14px] top-[14px]"
+              src="../assets/tick-circle-state.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <div
+              class="bg-card-default group-hover:bg-card-hover flex h-[286px] w-[248px] flex-col items-center rounded-[20px] px-5 pt-[46px] transition-all duration-300 ease-in-out"
+            >
+              <img
+                class="h-[116px]"
+                src="../assets/illustration-recruiting.png"
+                alt=""
+                aria-hidden="true"
+              />
+              <h2 class="mt-[18px] text-2xl font-bold text-white">
+                Recruiting
+              </h2>
+              <p class="mt-[6px]">
+                Recruit developers for outstanding companies.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Radio Buttons -->
+
+        <button
+          class="w-[405px] rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
+        >
+          Create account
+        </button>
+      </div>
+
+      <div
+        class="absolute bottom-[47px] left-1/2 flex w-fit -translate-x-1/2 items-start gap-5 text-tertiary"
+      >
+        <a href="https://www.tublian.com/privacy">Privacy Policy</a>
+        <a href="https://www.tublian.com/terms">Terms</a>
+      </div>
+    </div>
+    <!-- Account Setup -->
   </form>
 </main>

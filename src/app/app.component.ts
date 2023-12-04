@@ -8,7 +8,7 @@ import { FormData } from 'src/types';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  currentStep = 2;
+  currentStep = 3;
   title = 'ng-tublian';
   onboardingForm!: FormGroup;
 

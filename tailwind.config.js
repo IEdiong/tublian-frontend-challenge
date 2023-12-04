@@ -22,6 +22,10 @@ module.exports = {
         secondary: "#888",
         "accent-blue": "#4BA3FF",
         "horizontal-rule": "#414141",
+        card: {
+          default: "#1e1e1e",
+          hover: "#292929",
+        },
         gold: {
           100: "#FEEFC3",
           200: "#FEE38B",
