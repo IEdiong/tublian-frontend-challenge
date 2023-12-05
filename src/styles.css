@@ -15,6 +15,10 @@
   .step-btn {
     @apply text-sm font-medium;
   }
+
+  .badge {
+    @apply flex items-center justify-center rounded-[10px] px-[20px] py-[3px];
+  }
 }
 
 .text-gradient {
@@ -52,4 +56,19 @@
     #fbda61 0%,
     rgba(255, 90, 205, 0.84) 86.08%
   );
+}
+
+.pro-badge {
+  border: 1px solid #b29bf3;
+  background: linear-gradient(180deg, #855fef 0%, #5435aa 100%);
+}
+
+.business-badge {
+  border: 1px solid #79bbff;
+  background: linear-gradient(180deg, #0881ff 0%, #0b4f95 100%);
+}
+
+.enterprise-badge {
+  border: 1px solid #22bfd6;
+  background: linear-gradient(180deg, #068092 0%, #043b43 100%);
 }

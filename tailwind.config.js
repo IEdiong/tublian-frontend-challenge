@@ -22,6 +22,8 @@ module.exports = {
         secondary: "#888",
         "accent-blue": "#4BA3FF",
         "horizontal-rule": "#414141",
+        badge: "#76F368",
+        "fore-badge": "#445742",
         card: {
           default: "#1e1e1e",
           hover: "#292929",
