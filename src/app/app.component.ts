@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   currentStep = 4;
   title = 'ng-tublian';
   onboardingForm!: FormGroup;
+  isModalOpen = true;
 
   formData: FormData = {
     firstName: '',
@@ -35,5 +36,13 @@ export class AppComponent implements OnInit {
 
   goToNextStep(): void {
     this.currentStep++;
+  }
+
+  openModal(): void {
+    this.isModalOpen = true;
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
   }
 }

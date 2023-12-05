@@ -24,6 +24,8 @@ module.exports = {
         "horizontal-rule": "#414141",
         badge: "#76F368",
         "fore-badge": "#445742",
+        overlay: "#121212",
+        "soft-blue": "#91C3FD",
         card: {
           default: "#1e1e1e",
           hover: "#292929",

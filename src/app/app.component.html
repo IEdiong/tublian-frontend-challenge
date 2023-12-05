@@ -371,7 +371,6 @@
             </div>
           </div>
 
-          <!-- Radio Buttons -->
           <div class="flex items-center justify-center gap-7 text-white">
             <div
               class="bg-card-default border-card-hover flex h-[464px] w-[301px] flex-col justify-between rounded-[20px] border p-[20px]"
@@ -569,7 +568,6 @@
               </button>
             </div>
           </div>
-          <!-- Radio Buttons -->
 
           <div class="flex w-fit items-start gap-5 text-tertiary">
             <a href="https://www.tublian.com/privacy">Privacy Policy</a>
@@ -581,3 +579,8 @@
     <!-- Payment Plan -->
   </form>
 </main>
+
+<tbc-payment-modal
+  *ngIf="isModalOpen"
+  (closeModal)="closeModal()"
+></tbc-payment-modal>

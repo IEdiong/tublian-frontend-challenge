@@ -1,0 +1,131 @@
+<div
+  class="bg-overlay/50 absolute left-0 top-0 h-full w-full backdrop-blur-[50px] transition-all duration-500 ease-in-out"
+></div>
+<div
+  class="bg-card-default border-card-hover absolute left-1/2 top-[105px] z-10 mb-10 w-[580px] -translate-x-1/2 rounded-[20px] border p-5 transition-all duration-500 ease-in-out"
+>
+  <div class="flex items-center justify-between">
+    <div
+      class="flex w-fit items-center gap-[3px] px-[6px] font-logo text-[13px] text-white"
+    >
+      <img src="../assets/logo.svg" alt="" aria-hidden="true" />
+      <span> Tublian </span>
+    </div>
+
+    <button
+      class="bg-gradient h-8 w-8 rounded-full p-px"
+      (click)="onModalClose()"
+    >
+      <span
+        class="bg-card-default flex h-[30px] w-[30px] items-center justify-center rounded-full"
+      >
+        <img
+          src="../../../assets/close-icon.svg"
+          alt=""
+          aria-hidden="true"
+          class="h-3 w-3"
+        />
+      </span>
+    </button>
+  </div>
+
+  <div
+    class="bg-card-hover mt-7 rounded-[10px] border border-horizontal-rule py-[14px] text-white"
+  >
+    <div class="flex items-center justify-between px-5">
+      <h2 class="text-xl font-bold">Monthly Plan</h2>
+      <a href="/" class="font-medium text-gold-300">Change Plan</a>
+    </div>
+
+    <div class="my-[14px] h-px w-full bg-horizontal-rule"></div>
+
+    <div class="px-5">
+      <span class="business-badge badge w-fit font-bold">Business Plan</span>
+      <div class="mt-[13px] flex items-center justify-between">
+        <p class="text-lg">Total:</p>
+
+        <p class="flex items-center gap-2">
+          <span class="text-sm text-tertiary">USD</span>
+          <span
+            class="flex items-baseline text-[30px] font-bold leading-normal"
+          >
+            $49.99<span class="text-lg font-medium text-tertiary">/Month</span>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-7 flex flex-col items-start gap-2 text-white">
+    <h2 class="text-xl font-bold">Payment Method</h2>
+    <p class="text-tertiary">Choose how you&rsquo;d like to pay.</p>
+  </div>
+
+  <div class="mt-5 text-white">
+    <h2 class="text-xl font-bold">Payment Details</h2>
+  </div>
+
+  <fieldset class="mt-5 flex flex-col gap-5">
+    <label for="email" class="sr-only">Email</label>
+    <input
+      id="email"
+      class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
+      type="email"
+      placeholder="Email"
+    />
+    <label for="card-holder" class="sr-only">Card Holder</label>
+    <input
+      id="card-holder"
+      class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
+      type="text"
+      placeholder="Card Holder"
+    />
+    <label for="card-number" class="sr-only">Card Number</label>
+    <input
+      id="card-number"
+      class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
+      type="text"
+      placeholder="Card Number"
+    />
+
+    <div class="flex gap-5">
+      <label for="card-expire" class="sr-only">MM/YY</label>
+      <input
+        id="card-expire"
+        class="w-[260px] border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
+        type="text"
+        placeholder="MM/YY"
+      />
+      <label for="card-cvv" class="sr-only">CVV</label>
+      <input
+        id="card-cvv"
+        class="w-[260px] border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
+        type="text"
+        placeholder="CVV"
+      />
+    </div>
+
+    <label for="card-country" class="sr-only">Country</label>
+    <input
+      id="card-country"
+      class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
+      type="text"
+      placeholder="Country"
+    />
+  </fieldset>
+
+  <p class="mt-7">
+    By clicking below, you agree to our
+    <a class="text-gold-300" href="/">Terms</a>,
+    <a class="text-gold-300" href="/">Privacy Policy</a> and
+    <span class="text-soft-blue font-bold">Automatic Renewal</span>. Tublian
+    will charge you $49.99 (plus Tax) each month until you cancel you
+    subscription in account settings.
+  </p>
+
+  <button
+    class="mt-5 w-full rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
+  >
+    Pay $49.99
+  </button>
+</div>

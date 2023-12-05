@@ -5,9 +5,15 @@ import { AppComponent } from './app.component';
 import { OnboardingComponent } from './onboarding/onboarding.component';
 import { StepperComponent } from './components/stepper/stepper.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PaymentModalComponent } from './components/payment-modal/payment-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, OnboardingComponent, StepperComponent],
+  declarations: [
+    AppComponent,
+    OnboardingComponent,
+    StepperComponent,
+    PaymentModalComponent,
+  ],
   imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
