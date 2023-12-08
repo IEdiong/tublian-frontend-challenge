@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { FormGroupDirective } from '@angular/forms';
 
 @Component({
@@ -16,18 +16,25 @@ import { FormGroupDirective } from '@angular/forms';
 })
 export class GetStartedComponent implements OnInit {
   @Input() currentStep!: number;
+  @Input() formGroupName!: string;
+  @Output() proceed: EventEmitter<boolean> = new EventEmitter();
   form!: FormGroup;
 
   get firstName() {
-    return this.form.get(['name', 'firstName']);
+    return this.form.get('firstName') as FormControl<string>;
+  }
+
+  get lastName() {
+    return this.form.get('lastName') as FormControl<string>;
   }
 
   constructor(private rootFormGroup: FormGroupDirective) {}
+
   ngOnInit(): void {
-    this.form = this.rootFormGroup.control;
+    this.form = this.rootFormGroup.control.get(this.formGroupName) as FormGroup;
   }
 
   goToNextStep(): void {
-    return;
+    this.proceed.emit(!this.firstName.invalid);
   }
 }

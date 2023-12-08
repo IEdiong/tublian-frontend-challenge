@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   DestroyRef,
+  Input,
   OnInit,
   forwardRef,
   inject,
@@ -33,6 +34,15 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   ],
 })
 export class TextInputComponent implements ControlValueAccessor, OnInit {
+  @Input() textControl!: FormControl<string>;
+  @Input() inputId!: string;
+  @Input() label!: string;
+  @Input() placeholder!: string;
+  @Input() errorMessage!: string;
+
+  get textName() {
+    return this.textControl;
+  }
   formControl: FormControl = new FormControl<string>('');
 
   destroyRef: DestroyRef = inject(DestroyRef);

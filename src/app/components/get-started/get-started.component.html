@@ -17,53 +17,23 @@
     <div class="mt-[14px] flex max-w-[405px] flex-col gap-7">
       <p class="font-medium">Start recruiting streetcred developers, Today!!</p>
 
-      <fieldset formGroupName="name" class="flex flex-col gap-[14px]">
-        <div class="relative flex flex-col items-stretch gap-2">
-          <label for="first-name" class="sr-only">First Name</label>
-          <input
-            formControlName="firstName"
-            id="first-name"
-            class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-            [ngClass]="
-              firstName?.invalid && firstName?.touched
-                ? 'border-b-semantic-red focus-visible:border-b-semantic-red'
-                : ''
-            "
-            type="text"
-            placeholder="First name"
-            required
-          />
-          <img
-            *ngIf="firstName?.invalid && firstName?.touched"
-            class="absolute right-0 top-2 h-6 w-6"
-            src="../assets/info-circle.svg"
-            alt=""
-            aria-hidden="true"
-          />
-          <img
-            *ngIf="!firstName?.invalid"
-            class="stroke-semantic-green absolute right-0 top-2 h-6 w-6"
-            src="../assets/tick-circle-ok.svg"
-            alt=""
-            aria-hidden="true"
-          />
-          <span
-            *ngIf="firstName?.invalid && firstName?.touched"
-            class="text-semantic-red text-sm font-medium"
-            >This field is required</span
-          >
-        </div>
+      <fieldset class="flex flex-col gap-[14px]">
+        <tbc-text-input
+          [textControl]="firstName"
+          inputId="first-name"
+          label="First Name"
+          placeholder="First name"
+          errorMessage="First name is required"
+        ></tbc-text-input>
 
-        <!-- {{ !firstName?.invalid }} -->
-
-        <label for="last-name" class="sr-only">Last Name</label>
-        <input
-          formControlName="lastName"
-          id="last-name"
-          class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-          type="text"
+        <tbc-text-input
+          [textControl]="lastName"
+          inputId="last-name"
+          label="Last Name"
           placeholder="Last name"
-        />
+          errorMessage="Last name is required"
+        ></tbc-text-input>
+        <!-- {{ !firstName?.invalid }} -->
       </fieldset>
 
       <button

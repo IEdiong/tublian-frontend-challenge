@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = 'ng-tublian';
   onboardingForm!: FormGroup;
   isModalOpen = true;
+  userName = '';
 
   formData: FormData = {
     firstName: '',
@@ -42,8 +43,13 @@ export class AppComponent implements OnInit {
     return this.onboardingForm.get(['name', 'firstName']);
   }
 
-  goToNextStep(): void {
-    this.currentStep++;
+  goToNextStep(isValidStep: boolean): void {
+    if (isValidStep) {
+      this.userName = `${this.onboardingForm.value?.name?.firstName} ${this.onboardingForm.value?.name?.lastName}`;
+      this.currentStep++;
+    } else {
+      // TODO: set form error to true
+    }
 
     console.log(this.onboardingForm.value);
   }

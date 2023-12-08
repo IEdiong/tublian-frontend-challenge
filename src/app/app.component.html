@@ -2,7 +2,11 @@
   <form [formGroup]="onboardingForm" class="min-h-screen">
     <!-- Step 01: Get Started -->
     <div *ngIf="currentStep === 1" class="flex min-h-screen">
-      <tbc-get-started [currentStep]="currentStep"></tbc-get-started>
+      <tbc-get-started
+        formGroupName="name"
+        [currentStep]="currentStep"
+        (proceed)="goToNextStep($event)"
+      ></tbc-get-started>
     </div>
     <!-- Get Started -->
 
@@ -26,7 +30,7 @@
         <div class="mt-[14px] flex max-w-[405px] flex-col gap-7">
           <p class="font-medium">
             Creating account for
-            <span class="text-accent-blue">&#64;John Doe</span>
+            <span class="text-accent-blue">&#64;{{ userName }}</span>
           </p>
 
           <fieldset formGroupName="account" class="flex flex-col gap-[14px]">
@@ -80,7 +84,6 @@
 
           <div class="flex flex-col gap-[14px]">
             <button
-              (click)="goToNextStep()"
               class="rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
             >
               Create account

@@ -1,1 +1,35 @@
-<input type="text" [formControl]="formControl" />
+<div class="relative flex flex-col items-stretch gap-2">
+  <label [for]="inputId" class="sr-only">{{ label }}</label>
+  <input
+    [formControl]="textControl"
+    [id]="inputId"
+    class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:outline-none"
+    [ngClass]="
+      textControl.invalid && textControl.touched
+        ? 'border-b-semantic-red focus-visible:border-b-semantic-red'
+        : 'focus-visible:border-b-white'
+    "
+    type="text"
+    [placeholder]="placeholder"
+    required
+  />
+  <img
+    *ngIf="textControl.invalid && textControl.touched"
+    class="absolute right-0 top-2 h-6 w-6"
+    src="../assets/info-circle.svg"
+    alt=""
+    aria-hidden="true"
+  />
+  <img
+    *ngIf="!textControl.invalid"
+    class="stroke-semantic-green absolute right-0 top-2 h-6 w-6"
+    src="../assets/tick-circle-ok.svg"
+    alt=""
+    aria-hidden="true"
+  />
+  <span
+    *ngIf="textControl.invalid && textControl.touched"
+    class="text-semantic-red text-sm font-medium"
+    >{{ errorMessage }}</span
+  >
+</div>
