@@ -8,7 +8,7 @@ import { FormData } from 'src/types';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  currentStep = 4;
+  currentStep = 1;
   title = 'ng-tublian';
   onboardingForm!: FormGroup;
   isModalOpen = true;
@@ -31,11 +31,21 @@ export class AppComponent implements OnInit {
         firstName: ['', Validators.required],
         lastName: ['', Validators.required],
       }),
+      account: this.fb.nonNullable.group({
+        email: ['', Validators.required],
+        password: ['', Validators.required],
+      }),
     });
+  }
+
+  get firstName() {
+    return this.onboardingForm.get(['name', 'firstName']);
   }
 
   goToNextStep(): void {
     this.currentStep++;
+
+    console.log(this.onboardingForm.value);
   }
 
   openModal(): void {

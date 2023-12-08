@@ -23,14 +23,44 @@
           </p>
 
           <fieldset formGroupName="name" class="flex flex-col gap-[14px]">
-            <label for="first-name" class="sr-only">First Name</label>
-            <input
-              formControlName="firstName"
-              id="first-name"
-              class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-              type="text"
-              placeholder="First name"
-            />
+            <div class="relative flex flex-col items-stretch gap-2">
+              <label for="first-name" class="sr-only">First Name</label>
+              <input
+                formControlName="firstName"
+                id="first-name"
+                class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
+                [ngClass]="
+                  firstName?.invalid && firstName?.touched
+                    ? 'border-b-semantic-red focus-visible:border-b-semantic-red'
+                    : ''
+                "
+                type="text"
+                placeholder="First name"
+                required
+              />
+              <img
+                *ngIf="firstName?.invalid && firstName?.touched"
+                class="absolute right-0 top-2 h-6 w-6"
+                src="../assets/info-circle.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              <img
+                *ngIf="!firstName?.invalid"
+                class="stroke-semantic-green absolute right-0 top-2 h-6 w-6"
+                src="../assets/tick-circle-ok.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              <span
+                *ngIf="firstName?.invalid && firstName?.touched"
+                class="text-semantic-red text-sm font-medium"
+                >This field is required</span
+              >
+            </div>
+
+            <!-- {{ !firstName?.invalid }} -->
+
             <label for="last-name" class="sr-only">Last Name</label>
             <input
               formControlName="lastName"
@@ -98,20 +128,20 @@
             <span class="text-accent-blue">&#64;John Doe</span>
           </p>
 
-          <fieldset formGroupName="name" class="flex flex-col gap-[14px]">
-            <label for="first-name" class="sr-only">First Name</label>
+          <fieldset formGroupName="account" class="flex flex-col gap-[14px]">
+            <label for="email" class="sr-only">Email</label>
             <input
-              formControlName="firstName"
-              id="first-name"
+              formControlName="email"
+              id="email"
               class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
               type="email"
               placeholder="Email"
             />
             <div class="password-input">
-              <label for="last-name" class="sr-only">Last Name</label>
+              <label for="password" class="sr-only">Password</label>
               <input
-                formControlName="lastName"
-                id="last-name"
+                formControlName="password"
+                id="password"
                 class="w-full border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
                 type="password"
                 placeholder="Password"
@@ -149,6 +179,7 @@
 
           <div class="flex flex-col gap-[14px]">
             <button
+              (click)="goToNextStep()"
               class="rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
             >
               Create account
@@ -241,7 +272,7 @@
               aria-hidden="true"
             />
             <div
-              class="bg-card-default flex h-[286px] w-[248px] flex-col items-center rounded-[20px] px-5 pt-[46px]"
+              class="flex h-[286px] w-[248px] flex-col items-center rounded-[20px] bg-card-default px-5 pt-[46px]"
             >
               <img
                 src="../assets/illustration-team-project.png"
@@ -255,7 +286,7 @@
             </div>
           </div>
           <div
-            class="bg-card-hover group relative h-[288px] w-[250px] cursor-pointer rounded-[20px] p-px"
+            class="group relative h-[288px] w-[250px] cursor-pointer rounded-[20px] bg-card-hover p-px"
           >
             <img
               class="absolute right-[14px] top-[14px]"
@@ -264,7 +295,7 @@
               aria-hidden="true"
             />
             <div
-              class="bg-card-default group-hover:bg-card-hover flex h-[286px] w-[248px] flex-col items-center rounded-[20px] px-5 pt-[46px] transition-all duration-300 ease-in-out"
+              class="flex h-[286px] w-[248px] flex-col items-center rounded-[20px] bg-card-default px-5 pt-[46px] transition-all duration-300 ease-in-out group-hover:bg-card-hover"
             >
               <img
                 class="h-[116px]"
@@ -279,7 +310,7 @@
             </div>
           </div>
           <div
-            class="bg-card-hover group relative h-[288px] w-[250px] cursor-pointer rounded-[20px] p-px"
+            class="group relative h-[288px] w-[250px] cursor-pointer rounded-[20px] bg-card-hover p-px"
           >
             <img
               class="absolute right-[14px] top-[14px]"
@@ -288,7 +319,7 @@
               aria-hidden="true"
             />
             <div
-              class="bg-card-default group-hover:bg-card-hover flex h-[286px] w-[248px] flex-col items-center rounded-[20px] px-5 pt-[46px] transition-all duration-300 ease-in-out"
+              class="flex h-[286px] w-[248px] flex-col items-center rounded-[20px] bg-card-default px-5 pt-[46px] transition-all duration-300 ease-in-out group-hover:bg-card-hover"
             >
               <img
                 class="h-[116px]"
@@ -353,7 +384,7 @@
 
         <div class="flex flex-col items-center gap-[60px]">
           <div
-            class="bg-card-default border-card-hover flex h-12 w-[360px] rounded-[10px] border p-[3px] text-xl font-bold"
+            class="flex h-12 w-[360px] rounded-[10px] border border-card-hover bg-card-default p-[3px] text-xl font-bold"
           >
             <div
               class="bg-gradient flex w-full items-center justify-center rounded-[5px] text-white"
@@ -365,7 +396,7 @@
             >
               <span>Annually</span>
               <span
-                class="bg-fore-badge text-badge rounded-[33px] px-[6px] py-1 text-xs"
+                class="rounded-[33px] bg-fore-badge px-[6px] py-1 text-xs text-badge"
                 >20% Off</span
               >
             </div>
@@ -373,7 +404,7 @@
 
           <div class="flex items-center justify-center gap-7 text-white">
             <div
-              class="bg-card-default border-card-hover flex h-[464px] w-[301px] flex-col justify-between rounded-[20px] border p-[20px]"
+              class="flex h-[464px] w-[301px] flex-col justify-between rounded-[20px] border border-card-hover bg-card-default p-[20px]"
             >
               <div class="">
                 <span class="pro-badge badge w-fit">Pro</span>
@@ -431,7 +462,7 @@
 
             <div class="bg-gradient rounded-[20px] p-px">
               <div
-                class="bg-card-default flex h-[462px] w-[299px] flex-col justify-between rounded-[20px] p-[20px]"
+                class="flex h-[462px] w-[299px] flex-col justify-between rounded-[20px] bg-card-default p-[20px]"
               >
                 <div class="">
                   <span class="business-badge badge w-fit">Business Plan</span>
@@ -500,7 +531,7 @@
               </div>
             </div>
             <div
-              class="bg-card-default border-card-hover flex h-[464px] w-[301px] flex-col justify-between rounded-[20px] border p-[20px]"
+              class="flex h-[464px] w-[301px] flex-col justify-between rounded-[20px] border border-card-hover bg-card-default p-[20px]"
             >
               <div class="">
                 <span class="enterprise-badge badge w-fit"
@@ -581,6 +612,6 @@
 </main>
 
 <tbc-payment-modal
-  *ngIf="isModalOpen"
+  *ngIf="!isModalOpen"
   (closeModal)="closeModal()"
 ></tbc-payment-modal>

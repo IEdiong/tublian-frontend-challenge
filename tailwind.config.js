@@ -26,6 +26,8 @@ module.exports = {
         "fore-badge": "#445742",
         overlay: "#121212",
         "soft-blue": "#91C3FD",
+        "semantic-red": "#F26663",
+        "semantic-green": "#76F368",
         card: {
           default: "#1e1e1e",
           hover: "#292929",
