@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { FormData } from 'src/types';
 
 @Component({
@@ -8,7 +13,7 @@ import { FormData } from 'src/types';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  currentStep = 1;
+  currentStep = 2;
   title = 'ng-tublian';
   onboardingForm!: FormGroup;
   isModalOpen = true;
@@ -33,14 +38,14 @@ export class AppComponent implements OnInit {
         lastName: ['', Validators.required],
       }),
       account: this.fb.nonNullable.group({
-        email: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
         password: ['', Validators.required],
       }),
     });
   }
 
-  get firstName() {
-    return this.onboardingForm.get(['name', 'firstName']);
+  get email() {
+    return this.onboardingForm.get(['account', 'email']) as FormControl<string>;
   }
 
   goToNextStep(isValidStep: boolean): void {

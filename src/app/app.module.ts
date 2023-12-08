@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PaymentModalComponent } from './components/payment-modal/payment-modal.component';
 import { GetStartedComponent } from './components/get-started/get-started.component';
 import { TextInputComponent } from './components/text-input/text-input.component';
+import { EmailInputComponent } from './components/email-input/email-input.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,12 @@ import { TextInputComponent } from './components/text-input/text-input.component
     PaymentModalComponent,
     GetStartedComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule, TextInputComponent],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    TextInputComponent,
+    EmailInputComponent,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

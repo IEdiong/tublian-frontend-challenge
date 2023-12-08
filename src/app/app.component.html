@@ -34,14 +34,14 @@
           </p>
 
           <fieldset formGroupName="account" class="flex flex-col gap-[14px]">
-            <label for="email" class="sr-only">Email</label>
-            <input
-              formControlName="email"
-              id="email"
-              class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-              type="email"
+            <tbc-email-input
+              [textControl]="email"
+              inputId="email"
+              label="Email"
               placeholder="Email"
-            />
+              errorMessage="Please enter a valid email address"
+            ></tbc-email-input>
+
             <div class="password-input">
               <label for="password" class="sr-only">Password</label>
               <input
