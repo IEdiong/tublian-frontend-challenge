@@ -9,6 +9,7 @@ import { PaymentModalComponent } from './components/payment-modal/payment-modal.
 import { GetStartedComponent } from './components/get-started/get-started.component';
 import { TextInputComponent } from './components/text-input/text-input.component';
 import { EmailInputComponent } from './components/email-input/email-input.component';
+import { CreateAccountComponent } from './components/create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { EmailInputComponent } from './components/email-input/email-input.compon
     StepperComponent,
     PaymentModalComponent,
     GetStartedComponent,
+    CreateAccountComponent,
   ],
   imports: [
     BrowserModule,

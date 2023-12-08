@@ -13,7 +13,7 @@ import { FormData } from 'src/types';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  currentStep = 2;
+  currentStep = 1;
   title = 'ng-tublian';
   onboardingForm!: FormGroup;
   isModalOpen = true;
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
       }),
       account: this.fb.nonNullable.group({
         email: ['', [Validators.required, Validators.email]],
-        password: ['', Validators.required],
+        password: ['', [Validators.required, Validators.minLength(8)]],
       }),
     });
   }
@@ -50,7 +50,9 @@ export class AppComponent implements OnInit {
 
   goToNextStep(isValidStep: boolean): void {
     if (isValidStep) {
-      this.userName = `${this.onboardingForm.value?.name?.firstName} ${this.onboardingForm.value?.name?.lastName}`;
+      if (this.currentStep === 1) {
+        this.userName = `${this.onboardingForm.value?.name?.firstName} ${this.onboardingForm.value?.name?.lastName}`;
+      }
       this.currentStep++;
     } else {
       // TODO: set form error to true
