@@ -80,7 +80,7 @@ export class PasswordInputComponent implements ControlValueAccessor, OnInit {
     this.passwordControl.valueChanges.subscribe((value: string) => {
       this.hasLength = value.length >= 8;
       this.hasUppercase = /[A-Z]/.test(value);
-      this.hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+      this.hasSymbol = /[!@#$%^&*(),.?":{}|<>=;'~`-_+]/.test(value);
       // console.log(this.hasUppercase);
     });
   }
