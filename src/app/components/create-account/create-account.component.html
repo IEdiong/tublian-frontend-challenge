@@ -29,44 +29,12 @@
           errorMessage="Please enter a valid email address"
         ></tbc-email-input>
 
-        <div class="password-input">
-          <label for="password" class="sr-only">Password</label>
-          <input
-            formControlName="password"
-            id="password"
-            class="w-full border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-            type="password"
-            placeholder="Password"
-          />
-          <div class="mt-2 flex items-start gap-6 text-xs text-secondary">
-            <div class="flex flex-col gap-2">
-              <p class="flex items-center gap-2">
-                <img
-                  src="../assets/tick-circle.svg"
-                  alt=""
-                  class="h-[14px] w-[14px] flex-shrink-0"
-                />
-                <span>8 Characters minimum</span>
-              </p>
-              <p class="flex items-center gap-2">
-                <img
-                  src="../assets/tick-circle.svg"
-                  alt=""
-                  class="h-[14px] w-[14px] flex-shrink-0"
-                />
-                <span>One symbol character</span>
-              </p>
-            </div>
-            <p class="flex items-center gap-2">
-              <img
-                src="../assets/tick-circle.svg"
-                alt=""
-                class="h-[14px] w-[14px] flex-shrink-0"
-              />
-              <span>One uppercase character</span>
-            </p>
-          </div>
-        </div>
+        <tbc-password-input
+          [passwordControl]="password"
+          inputId="password"
+          label="Password"
+          placeholder="Password"
+        ></tbc-password-input>
       </fieldset>
 
       <div class="flex flex-col gap-[14px]">

@@ -10,6 +10,7 @@ import { GetStartedComponent } from './components/get-started/get-started.compon
 import { TextInputComponent } from './components/text-input/text-input.component';
 import { EmailInputComponent } from './components/email-input/email-input.component';
 import { CreateAccountComponent } from './components/create-account/create-account.component';
+import { PasswordInputComponent } from './components/password-input/password-input.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CreateAccountComponent } from './components/create-account/create-accou
     ReactiveFormsModule,
     TextInputComponent,
     EmailInputComponent,
+    PasswordInputComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

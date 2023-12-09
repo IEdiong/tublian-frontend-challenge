@@ -12,6 +12,7 @@ export class CreateAccountComponent implements OnInit {
   @Input() userName!: string;
   @Output() proceed: EventEmitter<boolean> = new EventEmitter();
   form!: FormGroup;
+  hasUppercaseCharacter = false;
 
   get email() {
     return this.form.get('email') as FormControl<string>;
@@ -25,9 +26,16 @@ export class CreateAccountComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.rootFormGroup.control.get(this.formGroupName) as FormGroup;
+
+    // this.password.valueChanges.subscribe((value: string) => {
+    //   this.hasUppercaseCharacter = /[A-Z]/.test(value);
+    //   console.log(this.hasUppercaseCharacter);
+    // });
   }
 
   goToNextStep(): void {
     this.proceed.emit(!this.form.invalid);
+
+    // console.log(/[A-Z]/.test(this.password.value));
   }
 }

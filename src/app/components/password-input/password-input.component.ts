@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -7,7 +8,7 @@ import {
   forwardRef,
   inject,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import {
   ControlValueAccessor,
   FormControl,
@@ -16,11 +17,10 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { debounceTime, noop, tap } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'tbc-email-input',
-  templateUrl: './email-input.component.html',
+  selector: 'tbc-password-input',
+  templateUrl: './password-input.component.html',
   styles: [],
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
@@ -28,24 +28,33 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => EmailInputComponent),
+      useExisting: forwardRef(() => PasswordInputComponent),
       multi: true,
     },
   ],
 })
-export class EmailInputComponent implements ControlValueAccessor, OnInit {
-  @Input() textControl!: FormControl<string>;
+export class PasswordInputComponent implements ControlValueAccessor, OnInit {
+  @Input() passwordControl!: FormControl<string>;
   @Input() inputId!: string;
   @Input() label!: string;
   @Input() placeholder!: string;
-  @Input() errorMessage!: string;
+  hasLength = false;
+  hasUppercase = false;
+  hasSymbol = false;
 
+  get password() {
+    return this.passwordControl;
+  }
   formControl: FormControl = new FormControl<string>('');
 
   destroyRef: DestroyRef = inject(DestroyRef);
 
   onChange: (value: string) => void = noop;
   onTouch: () => void = noop;
+
+  writeValue(value: string): void {
+    this.formControl.setValue(value, { emitEvent: false });
+  }
 
   registerOnChange(fn: (value: string) => void): void {
     this.onChange = fn;
@@ -59,10 +68,6 @@ export class EmailInputComponent implements ControlValueAccessor, OnInit {
     isDisabled ? this.formControl.disable() : this.formControl.enable();
   }
 
-  writeValue(value: string): void {
-    this.formControl.setValue(value, { emitEvent: false });
-  }
-
   ngOnInit(): void {
     this.formControl.valueChanges
       .pipe(
@@ -71,5 +76,12 @@ export class EmailInputComponent implements ControlValueAccessor, OnInit {
         takeUntilDestroyed(this.destroyRef),
       )
       .subscribe();
+
+    this.passwordControl.valueChanges.subscribe((value: string) => {
+      this.hasLength = value.length >= 8;
+      this.hasUppercase = /[A-Z]/.test(value);
+      this.hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+      // console.log(this.hasUppercase);
+    });
   }
 }
