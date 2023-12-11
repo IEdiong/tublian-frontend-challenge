@@ -49,8 +49,6 @@ export class RadioGroupComponent implements ControlValueAccessor, OnInit {
         takeUntilDestroyed(this.destroyRef),
       )
       .subscribe();
-
-    console.log(this.formControl.defaultValue);
   }
   registerOnChange(fn: (value: unknown) => void): void {
     this.onChange = fn;

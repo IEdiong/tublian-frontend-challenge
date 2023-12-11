@@ -12,6 +12,7 @@ import { EmailInputComponent } from './components/email-input/email-input.compon
 import { CreateAccountComponent } from './components/create-account/create-account.component';
 import { PasswordInputComponent } from './components/password-input/password-input.component';
 import { RadioGroupComponent } from './components/radio-group/radio-group.component';
+import { AccountSetupComponent } from './components/account-setup/account-setup.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RadioGroupComponent } from './components/radio-group/radio-group.compon
     GetStartedComponent,
     CreateAccountComponent,
     RadioGroupComponent,
+    AccountSetupComponent,
   ],
   imports: [
     BrowserModule,

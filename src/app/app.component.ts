@@ -13,7 +13,7 @@ import { FormData, Option, PlatformUsagePlan } from 'src/types';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  currentStep = 3;
+  currentStep = 1;
   title = 'ng-tublian';
   onboardingForm!: FormGroup;
   isModalOpen = true;
