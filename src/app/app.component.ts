@@ -5,7 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { FormData } from 'src/types';
+import { FormData, Option, PlatformUsagePlan } from 'src/types';
 
 @Component({
   selector: 'tbc-root',
@@ -13,18 +13,39 @@ import { FormData } from 'src/types';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  currentStep = 1;
+  currentStep = 3;
   title = 'ng-tublian';
   onboardingForm!: FormGroup;
   isModalOpen = true;
   userName = '';
+
+  options: Option[] = [
+    {
+      label: 'Team projects',
+      value: 'team',
+      imagePath: '../assets/illustration-team-project.png',
+      description: 'Hire developers for team projects.',
+    },
+    {
+      label: 'Personal projects',
+      value: 'personal',
+      imagePath: '../assets/illustration-personal-project.png',
+      description: 'Hire developers for personal projects.',
+    },
+    {
+      label: 'Recruiting',
+      value: 'recruiting',
+      imagePath: '../assets/illustration-recruiting.png',
+      description: 'Recruit developers for outstanding companies.',
+    },
+  ];
 
   formData: FormData = {
     firstName: '',
     lastName: '',
     email: '',
     password: '',
-    userPlatformUsagePlan: 'team projects',
+    userPlatformUsagePlan: 'team',
     chosenPaymentInterval: 'monthly',
     paymentPlan: 'pro',
   };
@@ -41,11 +62,17 @@ export class AppComponent implements OnInit {
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(8)]],
       }),
+      platformUsagePlan: this.fb.nonNullable.control<PlatformUsagePlan>(
+        'team',
+        Validators.required,
+      ),
     });
   }
 
-  get email() {
-    return this.onboardingForm.get(['account', 'email']) as FormControl<string>;
+  get radioGroupControl() {
+    return this.onboardingForm.get(
+      'platformUsagePlan',
+    ) as FormControl<PlatformUsagePlan>;
   }
 
   goToNextStep(isValidStep: boolean): void {

@@ -50,81 +50,15 @@
         </div>
 
         <!-- Radio Buttons -->
-        <div class="flex items-center justify-center gap-7 text-center">
-          <div
-            class="bg-gradient relative h-[288px] w-[250px] cursor-pointer rounded-[20px] p-px"
-          >
-            <img
-              class="absolute right-[14px] top-[14px]"
-              src="../assets/tick-circle-gradient.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <div
-              class="flex h-[286px] w-[248px] flex-col items-center rounded-[20px] bg-card-default px-5 pt-[46px]"
-            >
-              <img
-                src="../assets/illustration-team-project.png"
-                alt=""
-                aria-hidden="true"
-              />
-              <h2 class="mt-[18px] text-2xl font-bold text-white">
-                Team Projects
-              </h2>
-              <p class="mt-[6px]">Hire developers for team projects.</p>
-            </div>
-          </div>
-          <div
-            class="group relative h-[288px] w-[250px] cursor-pointer rounded-[20px] bg-card-hover p-px"
-          >
-            <img
-              class="absolute right-[14px] top-[14px]"
-              src="../assets/tick-circle-state.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <div
-              class="flex h-[286px] w-[248px] flex-col items-center rounded-[20px] bg-card-default px-5 pt-[46px] transition-all duration-300 ease-in-out group-hover:bg-card-hover"
-            >
-              <img
-                class="h-[116px]"
-                src="../assets/illustration-personal-project.png"
-                alt=""
-                aria-hidden="true"
-              />
-              <h2 class="mt-[18px] text-2xl font-bold text-white">
-                Personal Projects
-              </h2>
-              <p class="mt-[6px]">Hire developers for personal projects.</p>
-            </div>
-          </div>
-          <div
-            class="group relative h-[288px] w-[250px] cursor-pointer rounded-[20px] bg-card-hover p-px"
-          >
-            <img
-              class="absolute right-[14px] top-[14px]"
-              src="../assets/tick-circle-state.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <div
-              class="flex h-[286px] w-[248px] flex-col items-center rounded-[20px] bg-card-default px-5 pt-[46px] transition-all duration-300 ease-in-out group-hover:bg-card-hover"
-            >
-              <img
-                class="h-[116px]"
-                src="../assets/illustration-recruiting.png"
-                alt=""
-                aria-hidden="true"
-              />
-              <h2 class="mt-[18px] text-2xl font-bold text-white">
-                Recruiting
-              </h2>
-              <p class="mt-[6px]">
-                Recruit developers for outstanding companies.
-              </p>
-            </div>
-          </div>
-        </div>
+        <!-- ========================================================= -->
+        <tbc-radio-group
+          name="plan"
+          [options]="options"
+          [formControl]="radioGroupControl"
+        >
+        </tbc-radio-group>
+        <!-- ========================================================= -->
+
         <!-- Radio Buttons -->
 
         <button

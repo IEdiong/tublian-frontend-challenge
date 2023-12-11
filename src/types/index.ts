@@ -8,6 +8,13 @@ export interface FormData {
   paymentPlan: PaymentPlan;
 }
 
-type PlatformUsagePlan = 'team projects' | 'personal projects' | 'recruiting';
+export interface Option {
+  label: string;
+  value: PlatformUsagePlan;
+  imagePath: string;
+  description: string;
+}
+
+export type PlatformUsagePlan = 'team' | 'personal' | 'recruiting';
 type PaymentInterval = 'monthly' | 'annually';
 type PaymentPlan = 'pro' | 'business' | 'enterprise';
