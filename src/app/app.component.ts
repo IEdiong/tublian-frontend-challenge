@@ -9,6 +9,7 @@ import {
   FormData,
   Option,
   PaymentInterval,
+  PaymentPlan,
   PlatformUsagePlan,
 } from 'src/types';
 
@@ -18,10 +19,10 @@ import {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  currentStep = 4;
+  currentStep = 1;
   title = 'ng-tublian';
   onboardingForm!: FormGroup;
-  isModalOpen = true;
+  isModalOpen = false;
   userName = '';
 
   options: Option[] = [
@@ -77,6 +78,10 @@ export class AppComponent implements OnInit {
         'monthly',
         Validators.required,
       ),
+      paymentPlan: this.fb.nonNullable.control<PaymentPlan>(
+        'business',
+        Validators.required,
+      ),
     });
   }
 
@@ -106,8 +111,10 @@ export class AppComponent implements OnInit {
     console.log(this.onboardingForm.value);
   }
 
-  openModal(): void {
+  openModal(plan: PaymentPlan): void {
+    this.onboardingForm.get('paymentPlan')?.setValue(plan);
     this.isModalOpen = true;
+    console.log(this.onboardingForm.value);
   }
 
   closeModal(): void {

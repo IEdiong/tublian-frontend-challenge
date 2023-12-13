@@ -14,6 +14,7 @@ import { PasswordInputComponent } from './components/password-input/password-inp
 import { RadioGroupComponent } from './components/radio-group/radio-group.component';
 import { AccountSetupComponent } from './components/account-setup/account-setup.component';
 import { PlanIntervalComponent } from './components/plan-interval/plan-interval.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PlanIntervalComponent } from './components/plan-interval/plan-interval.
     CreateAccountComponent,
     RadioGroupComponent,
     AccountSetupComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
