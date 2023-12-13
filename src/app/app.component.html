@@ -53,5 +53,7 @@
 
 <tbc-payment-modal
   *ngIf="isModalOpen"
+  [paymentInterval]="paymentIntervalControl.value"
+  [plan]="paymentPlan"
   (closeModal)="closeModal()"
 ></tbc-payment-modal>

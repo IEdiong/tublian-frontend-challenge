@@ -1,8 +1,8 @@
 <div
-  class="bg-overlay/50 absolute left-0 top-0 h-full w-full backdrop-blur-[50px] transition-all duration-500 ease-in-out"
+  class="absolute left-0 top-0 h-full w-full bg-overlay/50 backdrop-blur-[50px] transition-all duration-500 ease-in-out"
 ></div>
 <div
-  class="bg-card-default border-card-hover absolute left-1/2 top-[105px] z-10 mb-10 w-[580px] -translate-x-1/2 rounded-[20px] border p-5 transition-all duration-500 ease-in-out"
+  class="absolute left-1/2 top-[105px] z-10 mb-10 w-[580px] -translate-x-1/2 rounded-[20px] border border-card-hover bg-card-default p-5 transition-all duration-500 ease-in-out"
 >
   <div class="flex items-center justify-between">
     <div
@@ -17,7 +17,7 @@
       (click)="onModalClose()"
     >
       <span
-        class="bg-card-default flex h-[30px] w-[30px] items-center justify-center rounded-full"
+        class="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-card-default"
       >
         <img
           src="../../../assets/close-icon.svg"
@@ -30,17 +30,23 @@
   </div>
 
   <div
-    class="bg-card-hover mt-7 rounded-[10px] border border-horizontal-rule py-[14px] text-white"
+    class="mt-7 rounded-[10px] border border-horizontal-rule bg-card-hover py-[14px] text-white"
   >
     <div class="flex items-center justify-between px-5">
-      <h2 class="text-xl font-bold">Monthly Plan</h2>
-      <a href="/" class="font-medium text-gold-300">Change Plan</a>
+      <h2 class="text-xl font-bold capitalize">{{ paymentInterval }} Plan</h2>
+      <button (click)="onModalClose()" class="font-medium text-gold-300">
+        Change Plan
+      </button>
     </div>
 
     <div class="my-[14px] h-px w-full bg-horizontal-rule"></div>
 
     <div class="px-5">
-      <span class="business-badge badge w-fit font-bold">Business Plan</span>
+      <span
+        [ngClass]="plan === 'business' ? 'business-badge' : 'pro-badge'"
+        class="badge w-fit font-bold capitalize"
+        >{{ plan }} Plan</span
+      >
       <div class="mt-[13px] flex items-center justify-between">
         <p class="text-lg">Total:</p>
 
@@ -49,7 +55,8 @@
           <span
             class="flex items-baseline text-[30px] font-bold leading-normal"
           >
-            $49.99<span class="text-lg font-medium text-tertiary">/Month</span>
+            {{ price | currency }}
+            <span class="text-lg font-medium text-tertiary">/Month</span>
           </span>
         </p>
       </div>
@@ -116,16 +123,18 @@
 
   <p class="mt-7">
     By clicking below, you agree to our
-    <a class="text-gold-300" href="/">Terms</a>,
-    <a class="text-gold-300" href="/">Privacy Policy</a> and
-    <span class="text-soft-blue font-bold">Automatic Renewal</span>. Tublian
-    will charge you $49.99 (plus Tax) each month until you cancel you
-    subscription in account settings.
+    <a class="text-gold-300" href="https://www.tublian.com/terms">Terms</a>,
+    <a class="text-gold-300" href="https://www.tublian.com/privacy"
+      >Privacy Policy</a
+    >
+    and <span class="font-bold text-soft-blue">Automatic Renewal</span>. Tublian
+    will charge you {{ price | currency }} (plus Tax) each month until you
+    cancel you subscription in account settings.
   </p>
 
   <button
     class="mt-5 w-full rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
   >
-    Pay $49.99
+    Pay {{ price | currency }}
   </button>
 </div>

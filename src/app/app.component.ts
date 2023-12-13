@@ -97,6 +97,10 @@ export class AppComponent implements OnInit {
     ) as FormControl<PaymentInterval>;
   }
 
+  get paymentPlan() {
+    return this.onboardingForm.get('paymentPlan')?.value as PaymentPlan;
+  }
+
   goToNextStep(isValidStep: boolean): void {
     if (isValidStep) {
       if (this.currentStep === 1) {
