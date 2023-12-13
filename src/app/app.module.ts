@@ -13,6 +13,7 @@ import { CreateAccountComponent } from './components/create-account/create-accou
 import { PasswordInputComponent } from './components/password-input/password-input.component';
 import { RadioGroupComponent } from './components/radio-group/radio-group.component';
 import { AccountSetupComponent } from './components/account-setup/account-setup.component';
+import { PlanIntervalComponent } from './components/plan-interval/plan-interval.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AccountSetupComponent } from './components/account-setup/account-setup.
     TextInputComponent,
     EmailInputComponent,
     PasswordInputComponent,
+    PlanIntervalComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

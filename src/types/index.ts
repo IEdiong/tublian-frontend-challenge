@@ -16,5 +16,5 @@ export interface Option {
 }
 
 export type PlatformUsagePlan = 'team' | 'personal' | 'recruiting';
-type PaymentInterval = 'monthly' | 'annually';
+export type PaymentInterval = 'monthly' | 'annually';
 type PaymentPlan = 'pro' | 'business' | 'enterprise';

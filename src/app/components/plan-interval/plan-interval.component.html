@@ -1,0 +1,44 @@
+<div
+  class="flex h-12 w-[360px] rounded-[10px] border border-card-hover bg-card-default p-[3px] text-xl font-bold"
+>
+  <label
+    [for]="options[0]"
+    class="relative flex w-full items-center justify-center text-white"
+    [ngClass]="
+      planIntervalControl.value === 'monthly'
+        ? 'bg-gradient rounded-[5px]'
+        : 'bg-transparent'
+    "
+  >
+    <span>Monthly</span>
+    <input
+      class="sr-only"
+      [id]="options[0]"
+      type="radio"
+      [formControl]="planIntervalControl"
+      [value]="options[0]"
+    />
+  </label>
+
+  <label
+    [for]="options[1]"
+    class="relative flex w-full items-center justify-center gap-1 px-4 py-2"
+    [ngClass]="
+      planIntervalControl.value === 'annually'
+        ? 'bg-gradient rounded-[5px]'
+        : 'bg-transparent'
+    "
+  >
+    <span>Annually</span>
+    <span class="rounded-[33px] bg-fore-badge px-[6px] py-1 text-xs text-badge"
+      >20% Off</span
+    >
+    <input
+      class="sr-only"
+      [id]="options[1]"
+      type="radio"
+      [formControl]="planIntervalControl"
+      [value]="options[1]"
+    />
+  </label>
+</div>

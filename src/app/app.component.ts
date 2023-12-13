@@ -5,7 +5,12 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { FormData, Option, PlatformUsagePlan } from 'src/types';
+import {
+  FormData,
+  Option,
+  PaymentInterval,
+  PlatformUsagePlan,
+} from 'src/types';
 
 @Component({
   selector: 'tbc-root',
@@ -13,7 +18,7 @@ import { FormData, Option, PlatformUsagePlan } from 'src/types';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  currentStep = 1;
+  currentStep = 4;
   title = 'ng-tublian';
   onboardingForm!: FormGroup;
   isModalOpen = true;
@@ -39,6 +44,8 @@ export class AppComponent implements OnInit {
       description: 'Recruit developers for outstanding companies.',
     },
   ];
+
+  paymentIntervals: PaymentInterval[] = ['monthly', 'annually'];
 
   formData: FormData = {
     firstName: '',
@@ -66,6 +73,10 @@ export class AppComponent implements OnInit {
         'team',
         Validators.required,
       ),
+      paymentInterval: this.fb.nonNullable.control<PaymentInterval>(
+        'monthly',
+        Validators.required,
+      ),
     });
   }
 
@@ -73,6 +84,12 @@ export class AppComponent implements OnInit {
     return this.onboardingForm.get(
       'platformUsagePlan',
     ) as FormControl<PlatformUsagePlan>;
+  }
+
+  get paymentIntervalControl() {
+    return this.onboardingForm.get(
+      'paymentInterval',
+    ) as FormControl<PaymentInterval>;
   }
 
   goToNextStep(isValidStep: boolean): void {
@@ -83,6 +100,7 @@ export class AppComponent implements OnInit {
       this.currentStep++;
     } else {
       // TODO: set form error to true
+      console.log('Form is not valid, thus do something here');
     }
 
     console.log(this.onboardingForm.value);
