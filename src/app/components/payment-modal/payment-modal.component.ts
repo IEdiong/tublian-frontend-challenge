@@ -46,6 +46,10 @@ export class PaymentModalComponent implements OnInit {
     return this.paymentDetails.get('cvv') as FormControl;
   }
 
+  get country(): FormControl {
+    return this.paymentDetails.get('country') as FormControl;
+  }
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {

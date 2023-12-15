@@ -116,13 +116,13 @@
         ></tbc-text-input>
       </div>
 
-      <label for="card-country" class="sr-only">Country</label>
-      <input
-        id="card-country"
-        class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-        type="text"
+      <tbc-text-input
+        [textControl]="country"
+        inputId="card-country"
+        label="Country"
         placeholder="Country"
-      />
+        errorMessage="Please input the card country"
+      ></tbc-text-input>
     </fieldset>
 
     <p class="mt-7">

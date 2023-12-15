@@ -13,6 +13,10 @@
       *ngSwitchCase="'card-cvv'"
       [ngTemplateOutlet]="cvv"
     ></ng-template>
+    <ng-template
+      *ngSwitchCase="'card-country'"
+      [ngTemplateOutlet]="country"
+    ></ng-template>
     <ng-template *ngSwitchDefault [ngTemplateOutlet]="normal"></ng-template>
   </ng-container>
 
@@ -120,6 +124,37 @@
     [placeholder]="placeholder"
     required
   />
+</ng-template>
+
+<ng-template #country>
+  <input
+    [formControl]="textControl"
+    [id]="inputId"
+    class="generic-input"
+    [ngClass]="
+      textControl.invalid && textControl.touched
+        ? 'border-b-semantic-red focus-visible:border-b-semantic-red'
+        : 'focus-visible:border-b-white'
+    "
+    type="text"
+    [placeholder]="placeholder"
+    required
+  />
+  <div
+    class="absolute right-0 top-2 flex h-6 w-6 items-center justify-end gap-2"
+    [ngClass]="
+      (textControl.invalid && textControl.touched) || !textControl.invalid
+        ? 'hidden'
+        : ''
+    "
+  >
+    <img
+      class=""
+      src="../../../assets/arrow-down.svg"
+      alt=""
+      aria-hidden="true"
+    />
+  </div>
 </ng-template>
 
 <ng-template #normal>
