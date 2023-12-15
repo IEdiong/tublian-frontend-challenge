@@ -4,6 +4,16 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
+    screens: {
+      tablet: "1024px",
+      // => @media (min-width: 1024px) { ... }
+
+      laptop: "1200px",
+      // => @media (min-width: 1200px) { ... }
+
+      desktop: "1440px",
+      // => @media (min-width: 1440px) { ... }
+    },
     extend: {
       fontFamily: {
         sans: ['"Space Grotesk"', ...defaultTheme.fontFamily.sans],
