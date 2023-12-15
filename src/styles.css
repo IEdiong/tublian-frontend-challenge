@@ -60,8 +60,19 @@
   background-position: center, center;
   background-repeat: no-repeat;
   background-size:
-    177px 177px,
+    115px 115px,
     580px 314px;
+}
+@media (min-width: 1024px) {
+  .bg-illustration-success-page {
+    background-image: url("./assets/payment-successful-star.svg"),
+      url("./assets/confetti.svg");
+    background-position: center, center;
+    background-repeat: no-repeat;
+    background-size:
+      177px 177px,
+      580px 314px;
+  }
 }
 
 .bg-gradient {

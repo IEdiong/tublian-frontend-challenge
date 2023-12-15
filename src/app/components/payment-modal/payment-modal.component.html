@@ -1,27 +1,31 @@
 <div
-  class="absolute left-0 top-0 h-full w-full bg-overlay/50 backdrop-blur-[50px] transition-all duration-500 ease-in-out"
+  class="fixed left-0 top-0 h-full w-full bg-overlay/50 backdrop-blur-[50px] transition-all duration-500 ease-in-out"
 ></div>
 <ng-container *ngIf="isPaymentSuccess; else paymentModal">
   <div
-    class="tablet:w-[580px] absolute left-1/2 top-[151px] z-10 h-[491px] -translate-x-1/2 rounded-[20px] border border-card-hover bg-card-default py-5 transition-all duration-500 ease-in-out"
+    class="tablet:max-w-[548px] tablet:px-0 absolute left-1/2 top-[151px] z-10 h-[491px] w-screen max-w-[570px] -translate-x-1/2 rounded-[20px] px-4 transition-all duration-500 ease-in-out"
   >
-    <div class="bg-illustration-success-page h-[314px] px-5">
-      <div
-        class="flex w-fit items-center gap-[3px] px-[6px] font-logo text-[13px] text-white"
-      >
-        <img src="../assets/logo.svg" alt="" aria-hidden="true" />
-        <span> Tublian </span>
+    <div class="rounded-[20px] border border-card-hover bg-card-default py-5">
+      <div class="bg-illustration-success-page tablet:h-[314px] h-[241px] px-5">
+        <div
+          class="flex w-fit items-center gap-[3px] px-[6px] font-logo text-[13px] text-white"
+        >
+          <img src="../assets/logo.svg" alt="" aria-hidden="true" />
+          <span> Tublian </span>
+        </div>
       </div>
-    </div>
-    <div class="px-5 text-center">
-      <h2>Payment Successful</h2>
-      <p>Your payment went through successfully.</p>
-      <a
-        href="https://www.tublian.com"
-        class="mt-7 block w-full rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
-      >
-        Proceed
-      </a>
+      <div class="tablet:pt-[13px] px-5 pt-3 text-center">
+        <h2 class="tablet:text-2xl text-lg font-bold">Payment Successful</h2>
+        <p class="tablet:text-base tablet:mt-[18px] mt-2 text-sm font-medium">
+          Your payment went through successfully.
+        </p>
+        <a
+          href="https://www.tublian.com"
+          class="tablet:mt-7 mt-6 block w-full rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
+        >
+          Proceed
+        </a>
+      </div>
     </div>
   </div>
 </ng-container>
