@@ -21,7 +21,7 @@
   }
 
   .generic-input {
-    @apply border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:outline-none;
+    @apply w-full border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:outline-none;
   }
 }
 

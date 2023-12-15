@@ -9,10 +9,8 @@ module.exports = {
       // => @media (min-width: 390px) { ... }
       tablet: "1024px",
       // => @media (min-width: 1024px) { ... }
-
       laptop: "1200px",
       // => @media (min-width: 1200px) { ... }
-
       desktop: "1440px",
       // => @media (min-width: 1440px) { ... }
     },
