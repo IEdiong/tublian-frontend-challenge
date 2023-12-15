@@ -9,6 +9,10 @@
       *ngSwitchCase="'card-expire'"
       [ngTemplateOutlet]="expiryDate"
     ></ng-template>
+    <ng-template
+      *ngSwitchCase="'card-cvv'"
+      [ngTemplateOutlet]="cvv"
+    ></ng-template>
     <ng-template *ngSwitchDefault [ngTemplateOutlet]="normal"></ng-template>
   </ng-container>
 
@@ -33,9 +37,60 @@
   >
 </div>
 
+<!-- !Templates -->
 <ng-template #creditCard>
+  <img
+    class="absolute left-0 top-2 h-6 w-6 stroke-semantic-green"
+    src="../../../assets/lock.svg"
+    alt=""
+    aria-hidden="true"
+  />
   <input
     mask="9999 9999 9999 9999"
+    [formControl]="textControl"
+    [id]="inputId"
+    class="generic-input ps-9"
+    [ngClass]="
+      textControl.invalid && textControl.touched
+        ? 'border-b-semantic-red focus-visible:border-b-semantic-red'
+        : 'focus-visible:border-b-white'
+    "
+    type="text"
+    [placeholder]="placeholder"
+    required
+  />
+  <div
+    class="absolute right-0 top-2 flex h-6 w-[124px] items-center justify-end gap-2"
+    [ngClass]="
+      (textControl.invalid && textControl.touched) || !textControl.invalid
+        ? 'hidden'
+        : ''
+    "
+  >
+    <img
+      class=""
+      src="../../../assets/visa-icon.svg"
+      alt=""
+      aria-hidden="true"
+    />
+    <img
+      class=""
+      src="../../../assets/mastercard-icon.svg"
+      alt=""
+      aria-hidden="true"
+    />
+    <img
+      class=""
+      src="../../../assets/american-express-icon.svg"
+      alt=""
+      aria-hidden="true"
+    />
+  </div>
+</ng-template>
+
+<ng-template #expiryDate>
+  <input
+    mask="M0/00"
     [formControl]="textControl"
     [id]="inputId"
     class="generic-input"
@@ -50,9 +105,9 @@
   />
 </ng-template>
 
-<ng-template #expiryDate>
+<ng-template #cvv>
   <input
-    mask="m0/00"
+    mask="000"
     [formControl]="textControl"
     [id]="inputId"
     class="generic-input"
