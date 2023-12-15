@@ -81,20 +81,28 @@
         placeholder="email"
         errorMessage="Please enter your email address"
       ></tbc-email-input>
-      <label for="card-holder" class="sr-only">Card Holder</label>
-      <input
-        id="card-holder"
-        class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-        type="text"
+      <tbc-text-input
+        [textControl]="cardHolder"
+        inputId="card-holder"
+        label="Card Holder"
         placeholder="Card Holder"
-      />
-      <label for="card-number" class="sr-only">Card Number</label>
+        errorMessage="Please input the card holder's name"
+      ></tbc-text-input>
+      <tbc-text-input
+        [textControl]="cardNumber"
+        type="number"
+        inputId="card-number"
+        label="Card Number"
+        placeholder="Card Number"
+        errorMessage="Please input the number on your card"
+      ></tbc-text-input>
+      <!-- <label for="card-number" class="sr-only">Card Number</label>
       <input
         id="card-number"
         class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
         type="text"
         placeholder="Card Number"
-      />
+      /> -->
 
       <div class="flex gap-5">
         <label for="card-expire" class="sr-only">MM/YY</label>

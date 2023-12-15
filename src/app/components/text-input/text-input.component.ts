@@ -39,6 +39,7 @@ export class TextInputComponent implements ControlValueAccessor, OnInit {
   @Input() label!: string;
   @Input() placeholder!: string;
   @Input() errorMessage!: string;
+  @Input() type: string | null = null;
 
   get textName() {
     return this.textControl;

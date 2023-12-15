@@ -9,7 +9,7 @@
         ? 'border-b-semantic-red focus-visible:border-b-semantic-red'
         : 'focus-visible:border-b-white'
     "
-    type="text"
+    [type]="type ? type : 'text'"
     [placeholder]="placeholder"
     required
   />
@@ -22,14 +22,14 @@
   />
   <img
     *ngIf="!textControl.invalid"
-    class="stroke-semantic-green absolute right-0 top-2 h-6 w-6"
+    class="absolute right-0 top-2 h-6 w-6 stroke-semantic-green"
     src="../assets/tick-circle-ok.svg"
     alt=""
     aria-hidden="true"
   />
   <span
     *ngIf="textControl.invalid && textControl.touched"
-    class="text-semantic-red text-sm font-medium"
+    class="text-sm font-medium text-semantic-red"
     >{{ errorMessage }}</span
   >
 </div>

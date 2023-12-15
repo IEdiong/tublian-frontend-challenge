@@ -30,6 +30,14 @@ export class PaymentModalComponent implements OnInit {
     return this.paymentDetails.get('email') as FormControl;
   }
 
+  get cardHolder(): FormControl {
+    return this.paymentDetails.get('cardHolder') as FormControl;
+  }
+
+  get cardNumber(): FormControl {
+    return this.paymentDetails.get('cardNumber') as FormControl;
+  }
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {

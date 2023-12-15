@@ -76,3 +76,7 @@
   border: 1px solid #22bfd6;
   background: linear-gradient(180deg, #068092 0%, #043b43 100%);
 }
+
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
