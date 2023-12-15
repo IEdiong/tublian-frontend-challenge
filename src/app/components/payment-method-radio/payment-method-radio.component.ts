@@ -32,8 +32,6 @@ import { PaymentMethod } from 'src/types';
 export class PaymentMethodRadioComponent
   implements ControlValueAccessor, OnInit
 {
-  // @Input({ required: true }) options = [];
-  // @Input({ required: true }) name = '';
   @Input() formControl!: FormControl<PaymentMethod>;
   @Output() selectedValueChange = new EventEmitter<PaymentMethod>();
 

@@ -25,6 +25,7 @@ export class PaymentModalComponent implements OnInit {
   @Output() closeModal = new EventEmitter<void>();
   price!: number;
   paymentDetails!: FormGroup;
+  isPaymentSuccess = false;
 
   get email(): FormControl {
     return this.paymentDetails.get('email') as FormControl;
@@ -97,6 +98,15 @@ export class PaymentModalComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.paymentDetails.value);
+    if (this.paymentDetails.valid) {
+      console.log(this.paymentDetails.value);
+      this.isPaymentSuccess = true;
+    } else {
+      // this.expiryDate.markAsTouched();
+      // this.paymentDetails.markAllAsTouched();
+      // this.paymentDetails.updateValueAndValidity();
+      // console.log('Touched is:', this.country.touched);
+      // console.log('Invalid is:', this.country.invalid);
+    }
   }
 }
