@@ -1,7 +1,11 @@
 <ng-container [formGroup]="form">
-  <div class="bg-illustration-two flex-1 bg-top-4"></div>
-  <div class="relative flex-1 pb-[47px] ps-10 pt-16">
-    <div class="flex items-center gap-[19px]">
+  <div class="tablet:block bg-illustration-two hidden flex-1 bg-top-4"></div>
+  <div
+    class="desktop:ps-10 laptop:ps-[50px] tablet:ps-7 desktop:pt-16 tablet:pt-10 relative flex-1 px-4 pb-[47px] pt-5"
+  >
+    <div
+      class="desktop:flex-row desktop:items-center flex flex-col items-start gap-[19px] gap-y-3"
+    >
       <a
         href="https://tublian.com"
         class="flex w-fit items-center gap-[3px] font-logo text-[13px] text-white"
@@ -11,10 +15,14 @@
       </a>
       <tbc-stepper [currentStep]="currentStep"></tbc-stepper>
     </div>
-    <h1 class="mt-10 text-4xl font-bold leading-[52px] text-white">
+    <h1
+      class="desktop:mt-10 desktop:text-4xl desktop:leading-[52px] tablet:text-2xl mt-5 text-lg font-bold leading-[30px] text-white"
+    >
       Create Account
     </h1>
-    <div class="mt-[14px] flex max-w-[405px] flex-col gap-7">
+    <div
+      class="tablet:mt-[14px] tablet:max-w-[405px] mt-2 flex max-w-[590px] flex-col gap-7"
+    >
       <p class="font-medium">
         Creating account for
         <span class="text-accent-blue">&#64;{{ userName }}</span>
@@ -83,7 +91,7 @@
     </p>
 
     <div
-      class="absolute bottom-[47px] flex w-fit items-start gap-5 text-tertiary"
+      class="tablet:flex absolute bottom-[47px] hidden w-fit items-start gap-5 text-tertiary"
     >
       <a href="https://www.tublian.com/privacy">Privacy Policy</a>
       <a href="https://www.tublian.com/terms">Terms</a>
