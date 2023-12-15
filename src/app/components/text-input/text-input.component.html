@@ -1,18 +1,8 @@
 <div class="relative flex flex-col items-stretch gap-2">
   <label [for]="inputId" class="sr-only">{{ label }}</label>
-  <input
-    [formControl]="textControl"
-    [id]="inputId"
-    class="generic-input"
-    [ngClass]="
-      textControl.invalid && textControl.touched
-        ? 'border-b-semantic-red focus-visible:border-b-semantic-red'
-        : 'focus-visible:border-b-white'
-    "
-    [type]="type ? type : 'text'"
-    [placeholder]="placeholder"
-    required
-  />
+  <ng-template
+    [ngTemplateOutlet]="inputId === 'card-number' ? creditCard : normal"
+  ></ng-template>
   <img
     *ngIf="textControl.invalid && textControl.touched"
     class="absolute right-0 top-2 h-6 w-6"
@@ -33,3 +23,36 @@
     >{{ errorMessage }}</span
   >
 </div>
+
+<ng-template #creditCard>
+  <input
+    mask="9999 9999 9999 9999"
+    [formControl]="textControl"
+    [id]="inputId"
+    class="generic-input"
+    [ngClass]="
+      textControl.invalid && textControl.touched
+        ? 'border-b-semantic-red focus-visible:border-b-semantic-red'
+        : 'focus-visible:border-b-white'
+    "
+    type="text"
+    [placeholder]="placeholder"
+    required
+  />
+</ng-template>
+
+<ng-template #normal>
+  <input
+    [formControl]="textControl"
+    [id]="inputId"
+    class="generic-input"
+    [ngClass]="
+      textControl.invalid && textControl.touched
+        ? 'border-b-semantic-red focus-visible:border-b-semantic-red'
+        : 'focus-visible:border-b-white'
+    "
+    [type]="type ? type : 'text'"
+    [placeholder]="placeholder"
+    required
+  />
+</ng-template>

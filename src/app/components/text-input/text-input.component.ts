@@ -17,11 +17,18 @@ import {
 } from '@angular/forms';
 import { debounceTime, noop, tap } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @Component({
   selector: 'tbc-text-input',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './text-input.component.html',
   styleUrls: ['./text-input.component.css'],
@@ -31,6 +38,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
       useExisting: forwardRef(() => TextInputComponent),
       multi: true,
     },
+    provideNgxMask(),
   ],
 })
 export class TextInputComponent implements ControlValueAccessor, OnInit {

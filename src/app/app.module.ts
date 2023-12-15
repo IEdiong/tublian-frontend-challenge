@@ -15,6 +15,8 @@ import { RadioGroupComponent } from './components/radio-group/radio-group.compon
 import { AccountSetupComponent } from './components/account-setup/account-setup.component';
 import { PlanIntervalComponent } from './components/plan-interval/plan-interval.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { SharedModule } from './shared/shared.module';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,11 @@ import { PaymentComponent } from './components/payment/payment.component';
     EmailInputComponent,
     PasswordInputComponent,
     PlanIntervalComponent,
+    SharedModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
-  providers: [],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
