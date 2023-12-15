@@ -1,5 +1,7 @@
-<div class="px-[103px]">
-  <div class="flex items-center justify-between gap-[19px]">
+<div class="desktop:px-[103px] tablet:px-[52px] px-4">
+  <div
+    class="tablet:flex-row tablet:items-center tablet:justify-between flex flex-col items-start gap-x-[19px] gap-y-3"
+  >
     <a
       href="https://tublian.com"
       class="flex w-fit items-center gap-[3px] font-logo text-[13px] text-white"
@@ -11,25 +13,36 @@
   </div>
 </div>
 
-<div class="flex flex-col items-center gap-10">
-  <div class="flex flex-col gap-[14px] text-center">
-    <h1 class="mt-10 text-4xl font-bold leading-[52px] text-white">
+<div
+  class="tablet:mt-10 tablet:gap-y-10 relative mt-5 flex flex-col items-center gap-y-7 px-4"
+>
+  <div
+    class="tablet:gap-y-[14px] tablet:max-w-[379px] desktop:max-w-full flex flex-col gap-y-2 text-center"
+  >
+    <h1
+      class="desktop:text-4xl desktop:leading-[52px] tablet:text-2xl text-lg font-bold leading-[30px] text-white"
+    >
       Payment Plan
     </h1>
-    <p class="font-medium">
+    <p class="tablet:text-base text-sm font-medium">
       We will customize your experience based on your option.
     </p>
   </div>
 
-  <div class="flex flex-col items-center gap-[60px]">
+  <div
+    class="tablet:items-center tablet:max-w-full flex w-full max-w-[510px] flex-col gap-[60px]"
+  >
     <tbc-plan-interval
+      class="tablet:w-fit w-full"
       [options]="paymentIntervals"
       [planIntervalControl]="paymentIntervalControl"
     ></tbc-plan-interval>
 
-    <div class="flex items-center justify-center gap-7 text-white">
+    <div
+      class="tablet:flex-row tablet:items-center tablet:gap-x-5 laptop:gap-x-7 flex flex-col justify-center gap-y-5 text-white"
+    >
       <div
-        class="flex h-[464px] w-[301px] flex-col justify-between rounded-[20px] border border-card-hover bg-card-default p-[20px]"
+        class="tablet:w-[301px] flex h-[464px] flex-col justify-between rounded-[20px] border border-card-hover bg-card-default p-[20px]"
       >
         <div class="">
           <span class="pro-badge badge w-fit">Pro</span>
@@ -40,7 +53,7 @@
           <h2 class="mt-5 text-xl font-medium text-tertiary">Features:</h2>
 
           <ul class="mt-2 flex flex-col gap-3 text-sm font-medium">
-            <li class="flex items-start gap-2">
+            <li class="tablet:max-w-full flex max-w-[261px] items-start gap-2">
               <img
                 class="h-6 w-6"
                 src="../assets/tick-circle-green.svg"
@@ -49,7 +62,7 @@
               />
               <span>Advanced search for developer profiles with filters.</span>
             </li>
-            <li class="flex items-start gap-2">
+            <li class="tablet:max-w-full flex max-w-[261px] items-start gap-2">
               <img
                 class="h-6 w-6"
                 src="../assets/tick-circle-green.svg"
@@ -58,7 +71,7 @@
               />
               <span>Increased monthly messages to developers.</span>
             </li>
-            <li class="flex items-start gap-2">
+            <li class="tablet:max-w-full flex max-w-[261px] items-start gap-2">
               <img
                 class="h-6 w-6"
                 src="../assets/tick-circle-green.svg"
@@ -79,7 +92,7 @@
 
       <div class="bg-gradient rounded-[20px] p-px">
         <div
-          class="flex h-[462px] w-[299px] flex-col justify-between rounded-[20px] bg-card-default p-[20px]"
+          class="tablet:w-[299px] flex h-[462px] w-full flex-col justify-between rounded-[20px] bg-card-default p-[20px]"
         >
           <div class="">
             <span class="business-badge badge w-fit">Business Plan</span>
@@ -92,7 +105,9 @@
             <h2 class="mt-5 text-xl font-medium text-tertiary">Features:</h2>
 
             <ul class="mt-2 flex flex-col gap-3 text-sm font-medium">
-              <li class="flex items-start gap-2">
+              <li
+                class="tablet:max-w-full flex max-w-[261px] items-start gap-2"
+              >
                 <img
                   class="h-6 w-6"
                   src="../assets/tick-circle-green.svg"
@@ -104,7 +119,9 @@
                   filters.</span
                 >
               </li>
-              <li class="flex items-start gap-2">
+              <li
+                class="tablet:max-w-full flex max-w-[261px] items-start gap-2"
+              >
                 <img
                   class="h-6 w-6"
                   src="../assets/tick-circle-green.svg"
@@ -113,7 +130,9 @@
                 />
                 <span>Increased monthly messages to developers.</span>
               </li>
-              <li class="flex items-start gap-2">
+              <li
+                class="tablet:max-w-full flex max-w-[261px] items-start gap-2"
+              >
                 <img
                   class="h-6 w-6"
                   src="../assets/tick-circle-green.svg"
@@ -122,7 +141,9 @@
                 />
                 <span>Dedicated account manager for personalized support.</span>
               </li>
-              <li class="flex items-start gap-2">
+              <li
+                class="tablet:max-w-full flex max-w-[261px] items-start gap-2"
+              >
                 <img
                   class="h-6 w-6"
                   src="../assets/tick-circle-green.svg"
@@ -141,8 +162,9 @@
           </button>
         </div>
       </div>
+
       <div
-        class="flex h-[464px] w-[301px] flex-col justify-between rounded-[20px] border border-card-hover bg-card-default p-[20px]"
+        class="tablet:w-[301px] flex h-[464px] w-full flex-col justify-between rounded-[20px] border border-card-hover bg-card-default p-[20px]"
       >
         <div class="">
           <span class="enterprise-badge badge w-fit">Enterprise Plan</span>
@@ -153,7 +175,7 @@
           <h2 class="mt-5 text-xl font-medium text-tertiary">Features:</h2>
 
           <ul class="mt-2 flex flex-col gap-3 text-sm font-medium">
-            <li class="flex items-start gap-2">
+            <li class="tablet:max-w-full flex max-w-[261px] items-start gap-2">
               <img
                 class="h-6 w-6"
                 src="../assets/tick-circle-green.svg"
@@ -162,7 +184,7 @@
               />
               <span>Tailored solutions for large enterprises or agencies.</span>
             </li>
-            <li class="flex items-start gap-2">
+            <li class="tablet:max-w-full flex max-w-[261px] items-start gap-2">
               <img
                 class="h-6 w-6"
                 src="../assets/tick-circle-green.svg"
@@ -174,7 +196,7 @@
                 integrations.</span
               >
             </li>
-            <li class="flex items-start gap-2">
+            <li class="tablet:max-w-full flex max-w-[261px] items-start gap-2">
               <img
                 class="h-6 w-6"
                 src="../assets/tick-circle-green.svg"
@@ -183,7 +205,7 @@
               />
               <span>Unlimited monthly messages to developers.</span>
             </li>
-            <li class="flex items-start gap-2">
+            <li class="tablet:max-w-full flex max-w-[261px] items-start gap-2">
               <img
                 class="h-6 w-6"
                 src="../assets/tick-circle-green.svg"
@@ -203,7 +225,7 @@
       </div>
     </div>
 
-    <div class="flex w-fit items-start gap-5 text-tertiary">
+    <div class="tablet:flex hidden w-fit items-start gap-5 text-tertiary">
       <a href="https://www.tublian.com/privacy">Privacy Policy</a>
       <a href="https://www.tublian.com/terms">Terms</a>
     </div>
