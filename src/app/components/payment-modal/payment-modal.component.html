@@ -98,20 +98,36 @@
       ></tbc-text-input>
 
       <div class="flex gap-5">
-        <label for="card-expire" class="sr-only">MM/YY</label>
+        <tbc-text-input
+          class="flex-1"
+          [textControl]="expiryDate"
+          inputId="card-expire"
+          label="Card Expiration Date"
+          placeholder="MM/YY"
+          errorMessage="Please input the card expiration date"
+        ></tbc-text-input>
+        <tbc-text-input
+          class="flex-1"
+          [textControl]="cvv"
+          inputId="card-cvv"
+          label="CVV"
+          placeholder="CVV"
+          errorMessage="Please input the card CVV"
+        ></tbc-text-input>
+        <!-- <label for="card-expire" class="sr-only">MM/YY</label>
         <input
           id="card-expire"
           class="w-[260px] border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
           type="text"
           placeholder="MM/YY"
-        />
-        <label for="card-cvv" class="sr-only">CVV</label>
+        /> -->
+        <!-- <label for="card-cvv" class="sr-only">CVV</label>
         <input
           id="card-cvv"
           class="w-[260px] border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
           type="text"
           placeholder="CVV"
-        />
+        /> -->
       </div>
 
       <label for="card-country" class="sr-only">Country</label>

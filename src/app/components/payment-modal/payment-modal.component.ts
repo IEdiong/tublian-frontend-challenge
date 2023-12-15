@@ -38,6 +38,14 @@ export class PaymentModalComponent implements OnInit {
     return this.paymentDetails.get('cardNumber') as FormControl;
   }
 
+  get expiryDate(): FormControl {
+    return this.paymentDetails.get('expiryDate') as FormControl;
+  }
+
+  get cvv(): FormControl {
+    return this.paymentDetails.get('cvv') as FormControl;
+  }
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
