@@ -1,5 +1,7 @@
-<div class="px-[103px]">
-  <div class="flex items-center justify-between gap-[19px]">
+<div class="desktop:px-[103px] tablet:px-[52px] px-4">
+  <div
+    class="tablet:flex-row desktop:items-center flex flex-col items-start justify-between gap-x-[19px] gap-y-3"
+  >
     <a
       href="https://tublian.com"
       class="flex w-fit items-center gap-[3px] font-logo text-[13px] text-white"
@@ -11,38 +13,41 @@
   </div>
 </div>
 
-<div class="flex flex-col items-center gap-10">
-  <div class="flex flex-col gap-[14px] text-center">
-    <h1 class="mt-10 text-4xl font-bold leading-[52px] text-white">
+<div
+  class="tablet:mt-10 desktop:px-[103px] tablet:gap-y-10 mt-5 flex flex-col items-center gap-7 px-4"
+>
+  <div class="tablet:gap-y-[14px] flex flex-col gap-2 text-center">
+    <h1
+      class="desktop:text-4xl tablet:leading-[34px] desktop:leading-[52px] tablet:text-2xl text-lg font-bold leading-[30px] text-white"
+    >
       How are you planning to use Tublian?
     </h1>
-    <p class="font-medium">
+    <p
+      class="tablet:text-base tablet:max-w-[379px] desktop:max-w-full tablet:mx-auto text-sm font-medium"
+    >
       We will customize your experience based on your option.
     </p>
   </div>
 
   <!-- Radio Buttons -->
-  <!-- ========================================================= -->
   <tbc-radio-group
     name="plan"
     [options]="options"
     [formControl]="radioGroupControl"
   >
   </tbc-radio-group>
-  <!-- ========================================================= -->
-
   <!-- Radio Buttons -->
 
   <button
     (click)="goToNextStep()"
-    class="w-[405px] rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
+    class="w-full max-w-[405px] rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
   >
-    Create account
+    Next
   </button>
 </div>
 
 <div
-  class="absolute bottom-[47px] left-1/2 flex w-fit -translate-x-1/2 items-start gap-5 text-tertiary"
+  class="tablet:flex absolute bottom-[47px] left-1/2 hidden w-fit -translate-x-1/2 items-start gap-5 text-tertiary"
 >
   <a href="https://www.tublian.com/privacy">Privacy Policy</a>
   <a href="https://www.tublian.com/terms">Terms</a>

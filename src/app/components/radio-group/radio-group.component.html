@@ -1,36 +1,48 @@
 <ng-container>
-  <div class="flex items-center justify-center gap-7 text-center">
+  <div
+    class="tablet:flex-row tablet:items-center flex flex-col justify-center gap-7 text-center"
+  >
     <ng-container *ngFor="let option of options">
       <label
-        class="group relative h-[288px] w-[250px] cursor-pointer rounded-[20px] p-px"
+        class="tablet:h-[288px] tablet:w-[250px] group relative cursor-pointer rounded-[20px] p-px"
         [ngClass]="
           option.value === formControl.value ? 'bg-gradient' : 'bg-card-hover '
         "
         [htmlFor]="option.value"
       >
-        <img
-          class="absolute right-[14px] top-[14px]"
-          [src]="
-            option.value === formControl.value
-              ? '../assets/tick-circle-gradient.svg'
-              : '../assets/tick-circle-state.svg'
-          "
-          alt=""
-          aria-hidden="true"
-        />
         <div
-          class="flex h-[286px] w-[248px] flex-col items-center rounded-[20px] bg-card-default px-5 pt-[46px]"
+          class="tablet:pt-[46px] tablet:px-5 tablet:h-[286px] tablet:w-[248px] tablet:flex-col flex items-center gap-x-3 rounded-[20px] bg-card-default py-3 pe-[22px] ps-5"
         >
+          <div
+            class="tablet:h-[116px] tablet:w-full flex w-[71px] items-center justify-center"
+          >
+            <img
+              class="object-fill"
+              [src]="option.imagePath"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+          <div class="tablet:text-center flex flex-col gap-y-[6px] text-left">
+            <h2
+              class="tablet:mt-[18px] tablet:text-2xl text-lg font-bold capitalize text-white"
+            >
+              {{ option.label }}
+            </h2>
+            <p class="tablet:mt-[6px] tablet:text-base text-sm">
+              {{ option.description }}
+            </p>
+          </div>
           <img
-            class="h-[116px]"
-            [src]="option.imagePath"
+            class="tablet:absolute tablet:right-[14px] tablet:top-[14px] ms-auto"
+            [src]="
+              option.value === formControl.value
+                ? '../assets/tick-circle-gradient.svg'
+                : '../assets/tick-circle-state.svg'
+            "
             alt=""
             aria-hidden="true"
           />
-          <h2 class="mt-[18px] text-2xl font-bold capitalize text-white">
-            {{ option.label }}
-          </h2>
-          <p class="mt-[6px]">{{ option.description }}</p>
         </div>
         <input
           class="sr-only absolute right-[26px] top-[26px] -translate-y-1/2 translate-x-1/2"
