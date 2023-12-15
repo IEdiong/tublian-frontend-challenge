@@ -4,137 +4,139 @@
 <div
   class="absolute left-1/2 top-[105px] z-10 mb-10 w-[580px] -translate-x-1/2 rounded-[20px] border border-card-hover bg-card-default p-5 transition-all duration-500 ease-in-out"
 >
-  <div class="flex items-center justify-between">
-    <div
-      class="flex w-fit items-center gap-[3px] px-[6px] font-logo text-[13px] text-white"
-    >
-      <img src="../assets/logo.svg" alt="" aria-hidden="true" />
-      <span> Tublian </span>
-    </div>
-
-    <button
-      class="bg-gradient h-8 w-8 rounded-full p-px"
-      (click)="onModalClose()"
-    >
-      <span
-        class="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-card-default"
+  <ng-container ngForm="paymentDetails">
+    <div class="flex items-center justify-between">
+      <div
+        class="flex w-fit items-center gap-[3px] px-[6px] font-logo text-[13px] text-white"
       >
-        <img
-          src="../../../assets/close-icon.svg"
-          alt=""
-          aria-hidden="true"
-          class="h-3 w-3"
-        />
-      </span>
-    </button>
-  </div>
+        <img src="../assets/logo.svg" alt="" aria-hidden="true" />
+        <span> Tublian </span>
+      </div>
 
-  <div
-    class="mt-7 rounded-[10px] border border-horizontal-rule bg-card-hover py-[14px] text-white"
-  >
-    <div class="flex items-center justify-between px-5">
-      <h2 class="text-xl font-bold capitalize">{{ paymentInterval }} Plan</h2>
-      <button (click)="onModalClose()" class="font-medium text-gold-300">
-        Change Plan
+      <button
+        class="bg-gradient h-8 w-8 rounded-full p-px"
+        (click)="onModalClose()"
+      >
+        <span
+          class="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-card-default"
+        >
+          <img
+            src="../../../assets/close-icon.svg"
+            alt=""
+            aria-hidden="true"
+            class="h-3 w-3"
+          />
+        </span>
       </button>
     </div>
 
-    <div class="my-[14px] h-px w-full bg-horizontal-rule"></div>
+    <div
+      class="mt-7 rounded-[10px] border border-horizontal-rule bg-card-hover py-[14px] text-white"
+    >
+      <div class="flex items-center justify-between px-5">
+        <h2 class="text-xl font-bold capitalize">{{ paymentInterval }} Plan</h2>
+        <button (click)="onModalClose()" class="font-medium text-gold-300">
+          Change Plan
+        </button>
+      </div>
 
-    <div class="px-5">
-      <span
-        [ngClass]="plan === 'business' ? 'business-badge' : 'pro-badge'"
-        class="badge w-fit font-bold capitalize"
-        >{{ plan }} Plan</span
-      >
-      <div class="mt-[13px] flex items-center justify-between">
-        <p class="text-lg">Total:</p>
+      <div class="my-[14px] h-px w-full bg-horizontal-rule"></div>
 
-        <p class="flex items-center gap-2">
-          <span class="text-sm text-tertiary">USD</span>
-          <span
-            class="flex items-baseline text-[30px] font-bold leading-normal"
-          >
-            {{ price | currency }}
-            <span class="text-lg font-medium text-tertiary">/Month</span>
-          </span>
-        </p>
+      <div class="px-5">
+        <span
+          [ngClass]="plan === 'business' ? 'business-badge' : 'pro-badge'"
+          class="badge w-fit font-bold capitalize"
+          >{{ plan }} Plan</span
+        >
+        <div class="mt-[13px] flex items-center justify-between">
+          <p class="text-lg">Total:</p>
+
+          <p class="flex items-center gap-2">
+            <span class="text-sm text-tertiary">USD</span>
+            <span
+              class="flex items-baseline text-[30px] font-bold leading-normal"
+            >
+              {{ price | currency }}
+              <span class="text-lg font-medium text-tertiary">/Month</span>
+            </span>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="mt-7 flex flex-col items-start gap-2 text-white">
-    <h2 class="text-xl font-bold">Payment Method</h2>
-    <p class="text-tertiary">Choose how you&rsquo;d like to pay.</p>
-  </div>
-
-  <div class="mt-5 text-white">
-    <h2 class="text-xl font-bold">Payment Details</h2>
-  </div>
-
-  <fieldset class="mt-5 flex flex-col gap-5">
-    <label for="email" class="sr-only">Email</label>
-    <input
-      id="email"
-      class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-      type="email"
-      placeholder="Email"
-    />
-    <label for="card-holder" class="sr-only">Card Holder</label>
-    <input
-      id="card-holder"
-      class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-      type="text"
-      placeholder="Card Holder"
-    />
-    <label for="card-number" class="sr-only">Card Number</label>
-    <input
-      id="card-number"
-      class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-      type="text"
-      placeholder="Card Number"
-    />
-
-    <div class="flex gap-5">
-      <label for="card-expire" class="sr-only">MM/YY</label>
-      <input
-        id="card-expire"
-        class="w-[260px] border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-        type="text"
-        placeholder="MM/YY"
-      />
-      <label for="card-cvv" class="sr-only">CVV</label>
-      <input
-        id="card-cvv"
-        class="w-[260px] border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-        type="text"
-        placeholder="CVV"
-      />
+    <div class="mt-7 flex flex-col items-start gap-2 text-white">
+      <h2 class="text-xl font-bold">Payment Method</h2>
+      <p class="text-tertiary">Choose how you&rsquo;d like to pay.</p>
     </div>
 
-    <label for="card-country" class="sr-only">Country</label>
-    <input
-      id="card-country"
-      class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
-      type="text"
-      placeholder="Country"
-    />
-  </fieldset>
+    <div class="mt-5 text-white">
+      <h2 class="text-xl font-bold">Payment Details</h2>
+    </div>
 
-  <p class="mt-7">
-    By clicking below, you agree to our
-    <a class="text-gold-300" href="https://www.tublian.com/terms">Terms</a>,
-    <a class="text-gold-300" href="https://www.tublian.com/privacy"
-      >Privacy Policy</a
+    <fieldset class="mt-5 flex flex-col gap-5">
+      <tbc-email-input
+        [textControl]="email"
+        inputId="account-email"
+        label="email"
+        placeholder="email"
+        errorMessage="Please enter your email address"
+      ></tbc-email-input>
+      <label for="card-holder" class="sr-only">Card Holder</label>
+      <input
+        id="card-holder"
+        class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
+        type="text"
+        placeholder="Card Holder"
+      />
+      <label for="card-number" class="sr-only">Card Number</label>
+      <input
+        id="card-number"
+        class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
+        type="text"
+        placeholder="Card Number"
+      />
+
+      <div class="flex gap-5">
+        <label for="card-expire" class="sr-only">MM/YY</label>
+        <input
+          id="card-expire"
+          class="w-[260px] border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
+          type="text"
+          placeholder="MM/YY"
+        />
+        <label for="card-cvv" class="sr-only">CVV</label>
+        <input
+          id="card-cvv"
+          class="w-[260px] border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
+          type="text"
+          placeholder="CVV"
+        />
+      </div>
+
+      <label for="card-country" class="sr-only">Country</label>
+      <input
+        id="card-country"
+        class="border-b-[1px] border-b-secondary bg-transparent pb-4 pt-2 font-medium text-white transition-colors duration-300 ease-in-out placeholder:font-medium placeholder:capitalize placeholder:text-placeholder focus-visible:border-b-white focus-visible:outline-none"
+        type="text"
+        placeholder="Country"
+      />
+    </fieldset>
+
+    <p class="mt-7">
+      By clicking below, you agree to our
+      <a class="text-gold-300" href="https://www.tublian.com/terms">Terms</a>,
+      <a class="text-gold-300" href="https://www.tublian.com/privacy"
+        >Privacy Policy</a
+      >
+      and <span class="font-bold text-soft-blue">Automatic Renewal</span>.
+      Tublian will charge you {{ price | currency }} (plus Tax) each month until
+      you cancel you subscription in account settings.
+    </p>
+
+    <button
+      class="mt-5 w-full rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
     >
-    and <span class="font-bold text-soft-blue">Automatic Renewal</span>. Tublian
-    will charge you {{ price | currency }} (plus Tax) each month until you
-    cancel you subscription in account settings.
-  </p>
-
-  <button
-    class="mt-5 w-full rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
-  >
-    Pay {{ price | currency }}
-  </button>
+      Pay {{ price | currency }}
+    </button>
+  </ng-container>
 </div>

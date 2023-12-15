@@ -19,7 +19,7 @@ import {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  currentStep = 1;
+  currentStep = 4;
   title = 'ng-tublian';
   onboardingForm!: FormGroup;
   isModalOpen = false;
