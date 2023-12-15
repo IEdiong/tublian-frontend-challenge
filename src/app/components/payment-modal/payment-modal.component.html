@@ -67,6 +67,11 @@
     <div class="mt-7 flex flex-col items-start gap-2 text-white">
       <h2 class="text-xl font-bold">Payment Method</h2>
       <p class="text-tertiary">Choose how you&rsquo;d like to pay.</p>
+
+      <tbc-payment-method-radio
+        class="w-full"
+        [formControl]="paymentMethod"
+      ></tbc-payment-method-radio>
     </div>
 
     <div class="mt-5 text-white">
@@ -137,6 +142,7 @@
     </p>
 
     <button
+      (click)="onSubmit()"
       class="mt-5 w-full rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
     >
       Pay {{ price | currency }}

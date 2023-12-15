@@ -5,7 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { PaymentInterval, PaymentPlan } from 'src/types';
+import { PaymentInterval, PaymentMethod, PaymentPlan } from 'src/types';
 
 @Component({
   selector: 'tbc-payment-modal',
@@ -50,6 +50,12 @@ export class PaymentModalComponent implements OnInit {
     return this.paymentDetails.get('country') as FormControl;
   }
 
+  get paymentMethod(): FormControl<PaymentMethod> {
+    return this.paymentDetails.get(
+      'paymentMethod',
+    ) as FormControl<PaymentMethod>;
+  }
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -60,6 +66,10 @@ export class PaymentModalComponent implements OnInit {
     }
 
     this.paymentDetails = this.fb.nonNullable.group({
+      paymentMethod: this.fb.control<PaymentMethod>(
+        'credit-card',
+        Validators.required,
+      ),
       email: ['', [Validators.required, Validators.email]],
       cardHolder: ['', Validators.required],
       cardNumber: [
@@ -84,5 +94,9 @@ export class PaymentModalComponent implements OnInit {
 
   onModalClose(): void {
     this.closeModal.emit();
+  }
+
+  onSubmit(): void {
+    console.log(this.paymentDetails.value);
   }
 }

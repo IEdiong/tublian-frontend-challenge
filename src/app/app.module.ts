@@ -17,6 +17,7 @@ import { PlanIntervalComponent } from './components/plan-interval/plan-interval.
 import { PaymentComponent } from './components/payment/payment.component';
 import { SharedModule } from './shared/shared.module';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { PaymentMethodRadioComponent } from './components/payment-method-radio/payment-method-radio.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     RadioGroupComponent,
     AccountSetupComponent,
     PaymentComponent,
+    PaymentMethodRadioComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,133 @@
+<!-- <ng-container>
+  <div class="flex items-center justify-center gap-7 text-center">
+    <ng-container *ngFor="let option of options">
+      <label
+        class="group relative h-[288px] w-[250px] cursor-pointer rounded-[20px] p-px"
+        [ngClass]="
+          option.value === formControl.value ? 'bg-gradient' : 'bg-card-hover '
+        "
+        [htmlFor]="option.value"
+      >
+        <img
+          class="absolute right-[14px] top-[14px]"
+          [src]="
+            option.value === formControl.value
+              ? '../assets/tick-circle-gradient.svg'
+              : '../assets/tick-circle-state.svg'
+          "
+          alt=""
+          aria-hidden="true"
+        />
+        <div
+          class="flex h-[286px] w-[248px] flex-col items-center rounded-[20px] bg-card-default px-5 pt-[46px]"
+        >
+          <img
+            class="h-[116px]"
+            [src]="option.imagePath"
+            alt=""
+            aria-hidden="true"
+          />
+          <h2 class="mt-[18px] text-2xl font-bold capitalize text-white">
+            {{ option.label }}
+          </h2>
+          <p class="mt-[6px]">{{ option.description }}</p>
+        </div>
+        <input
+          class="sr-only absolute right-[26px] top-[26px] -translate-y-1/2 translate-x-1/2"
+          type="radio"
+          [formControl]="formControl"
+          [value]="option.value"
+          [checked]="option.value === formControl.defaultValue"
+          id="{{ option.value }}"
+          [name]="name"
+        />
+      </label>
+    </ng-container>
+  </div>
+</ng-container> -->
+
+<div class="mt-5 flex w-full flex-col gap-3">
+  <div
+    class="rounded-[10px] p-px"
+    [ngClass]="
+      formControl.value === 'credit-card' ? 'bg-gradient' : 'bg-card-hover'
+    "
+  >
+    <label
+      class="flex w-full gap-5 rounded-[10px] px-5 py-[14px] hover:cursor-pointer"
+      [ngClass]="
+        formControl.value === 'credit-card'
+          ? 'bg-card-hover'
+          : 'bg-card-default'
+      "
+      for="credit-card"
+    >
+      <img
+        *ngIf="formControl.value === 'credit-card'"
+        src="../../../assets/card-check.svg"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        *ngIf="formControl.value !== 'credit-card'"
+        src="../../../assets/card-unchecked.svg"
+        alt=""
+        aria-hidden="true"
+      />
+      <div class="flex gap-[14px]">
+        <img src="../../../assets/credit-card-icon.svg" alt="" />
+        <span>Credit Card</span>
+      </div>
+      <input
+        type="radio"
+        name="paymentMethod"
+        id="credit-card"
+        [formControl]="formControl"
+        value="credit-card"
+        [defaultChecked]="true"
+        class="sr-only"
+      />
+    </label>
+  </div>
+
+  <div
+    class="rounded-[10px] p-px"
+    [ngClass]="
+      formControl.value !== 'credit-card' ? 'bg-gradient' : 'bg-card-hover'
+    "
+  >
+    <label
+      class="flex w-full gap-5 rounded-[10px] px-5 py-[14px] hover:cursor-pointer"
+      [ngClass]="
+        formControl.value !== 'credit-card'
+          ? 'bg-card-hover'
+          : 'bg-card-default'
+      "
+      for="g-pay"
+    >
+      <img
+        *ngIf="formControl.value !== 'credit-card'"
+        src="../../../assets/card-check.svg"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        *ngIf="formControl.value === 'credit-card'"
+        src="../../../assets/card-unchecked.svg"
+        alt=""
+        aria-hidden="true"
+      />
+      <div class="flex gap-[14px]">
+        <img src="../../../assets/google-pay-icon.svg" alt="" />
+      </div>
+      <input
+        type="radio"
+        name="paymentMethod"
+        id="g-pay"
+        [formControl]="formControl"
+        value="google-pay"
+        class="sr-only"
+      />
+    </label>
+  </div>
+</div>

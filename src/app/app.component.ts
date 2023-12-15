@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   currentStep = 4;
   title = 'ng-tublian';
   onboardingForm!: FormGroup;
-  isModalOpen = false;
+  isModalOpen = true;
   userName = '';
 
   options: Option[] = [
