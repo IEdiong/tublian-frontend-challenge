@@ -91,6 +91,8 @@ export class PaymentModalComponent implements OnInit {
       ],
       country: ['', Validators.required],
     });
+
+    document.documentElement.scrollTop = 0;
   }
 
   onModalClose(): void {
@@ -108,5 +110,7 @@ export class PaymentModalComponent implements OnInit {
       // console.log('Touched is:', this.country.touched);
       // console.log('Invalid is:', this.country.invalid);
     }
+
+    document.documentElement.scrollTop = 0;
   }
 }

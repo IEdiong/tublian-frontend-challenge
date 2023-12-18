@@ -1,1 +1,60 @@
-<p>onboarding works!</p>
+<main>
+  <form [formGroup]="onboardingForm" class="min-h-screen">
+    <!-- Step 01: Get Started -->
+    <div *ngIf="currentStep === 1" class="flex min-h-screen">
+      <tbc-get-started
+        formGroupName="name"
+        [currentStep]="currentStep"
+        (proceed)="goToNextStep($event)"
+      ></tbc-get-started>
+    </div>
+    <!-- Get Started -->
+
+    <!-- Step 02: Create Account -->
+    <div *ngIf="currentStep === 2" class="flex min-h-screen">
+      <tbc-create-account
+        formGroupName="account"
+        [currentStep]="currentStep"
+        [userName]="userName"
+        (proceed)="goToNextStep($event)"
+      ></tbc-create-account>
+    </div>
+    <!-- Create Account -->
+
+    <!-- Step 03: Account Setup -->
+    <div
+      *ngIf="currentStep === 3"
+      class="relative min-h-screen flex-1 pb-[47px] pt-5 tablet:pt-10 desktop:pt-16"
+    >
+      <tbc-account-setup
+        [currentStep]="currentStep"
+        [options]="options"
+        [radioGroupControl]="radioGroupControl"
+        (proceed)="goToNextStep($event)"
+      ></tbc-account-setup>
+    </div>
+    <!-- Account Setup -->
+
+    <!-- Step 04: Payment Plan -->
+    <div
+      *ngIf="currentStep === 4"
+      class="relative min-h-screen flex-1 pb-[90px] pt-5 tablet:pt-10 desktop:pt-16"
+    >
+      <tbc-payment
+        [currentStep]="currentStep"
+        [paymentIntervals]="paymentIntervals"
+        [paymentIntervalControl]="paymentIntervalControl"
+        (paymentPlanSelect)="openModal($event)"
+      ></tbc-payment>
+    </div>
+    <!-- Payment Plan -->
+  </form>
+</main>
+
+<tbc-payment-modal
+  class="block h-full px-4"
+  *ngIf="isModalOpen"
+  [paymentInterval]="paymentIntervalControl.value"
+  [plan]="paymentPlan"
+  (closeModal)="closeModal()"
+></tbc-payment-modal>
