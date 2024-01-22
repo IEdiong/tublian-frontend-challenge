@@ -1,27 +1,68 @@
-# NgTublian
+# Tublian Customer Onboarding Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+As a member of the TublianX web development team, I my task was to develop a new customer onboarding application. The team's designer provided the Figma design.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Requirements](#requirements)
+- [Tech Stack](#tech-stack)
+- [Run Locally](#run-locally)
+  - [Prerequisites](#prerequisites)
 
-## Code scaffolding
+![Design Cover](./design/tublian-cover.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requirements
 
-## Build
+- **Tech Stack Selection**: Choose your preferred tech stack. Options include Next.js, Angular, React, among others.
+- **Design Pattern**: Your frontend code must adhere to the MVVM (Model, View, ViewModel) pattern.
+- **Style Guide**: Use the css properties provided by Figma design.
+- **Code Hosting and Open-Sourcing**: Host your project on GitHub and make it open-source.
+- **Submission**: Once completed, submit your GitHub repository link.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Bonus Task:
 
-## Running unit tests
+Integrate the application with Stripe and develop the necessary backend API.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Tech Stack
 
-## Running end-to-end tests
+- **Frontend**: Angular
+- **Styling**: TailwindCSS
+- **Deployment**: Netlify
+- **Version Control**: Git, GitHub
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Run Locally
 
-## Further help
+### Prerequisites
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+List any prerequisites or dependencies that need to be installed before running the application. For example:
+
+- [Node.js](https://nodejs.org/) (v18.10.0 or higher)
+- [npm](https://www.npmjs.com/) (v8.19.4 or higher)
+
+Clone the project
+
+```bash
+  git clone https://github.com/IEdiong/ng-tublian.git
+
+  or
+  # For SSH
+  git clone git@github.com:IEdiong/ng-tublian.git
+```
+
+Go to the project directory
+
+```bash
+  cd ng-tublian
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
