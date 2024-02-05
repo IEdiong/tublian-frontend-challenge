@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   DestroyRef,
   Input,
@@ -29,7 +28,6 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     NgxMaskDirective,
     NgxMaskPipe,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './text-input.component.html',
   styleUrls: ['./text-input.component.css'],
   providers: [
@@ -54,7 +52,7 @@ export class TextInputComponent implements ControlValueAccessor, OnInit {
   get textName() {
     return this.textControl;
   }
-  formControl: FormControl = new FormControl<string>('');
+  formControl = new FormControl<string>('', { nonNullable: true });
 
   destroyRef: DestroyRef = inject(DestroyRef);
 
