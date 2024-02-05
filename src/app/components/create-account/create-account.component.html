@@ -1,98 +1,98 @@
 <ng-container [formGroup]="form">
-  <div class="tablet:block bg-illustration-two hidden flex-1 bg-top-4"></div>
+  <div class="bg-illustration-two hidden flex-1 bg-top-4 tablet:block"></div>
   <div
-    class="desktop:ps-10 laptop:ps-[50px] tablet:ps-7 desktop:pt-16 tablet:pt-10 relative flex-1 px-4 pb-[47px] pt-5"
+    class="relative flex-1 px-4 pb-[47px] pt-5 tablet:ps-7 tablet:pt-10 laptop:ps-[50px] desktop:ps-10 desktop:pt-16"
   >
-    <div
-      class="desktop:flex-row desktop:items-center flex flex-col items-start gap-[19px] gap-y-3"
-    >
-      <a
-        href="https://tublian.com"
-        class="flex w-fit items-center gap-[3px] font-logo text-[13px] text-white"
+    <div class="content-height">
+      <div
+        class="flex flex-col items-start gap-[19px] gap-y-3 desktop:flex-row desktop:items-center"
       >
-        <img src="../assets/logo.svg" alt="" aria-hidden="true" />
-        <span> Tublian </span>
-      </a>
-      <tbc-stepper [currentStep]="currentStep"></tbc-stepper>
-    </div>
-    <h1
-      class="desktop:mt-10 desktop:text-4xl desktop:leading-[52px] tablet:text-2xl mt-5 text-lg font-bold leading-[30px] text-white"
-    >
-      Create Account
-    </h1>
-    <div
-      class="tablet:mt-[14px] tablet:max-w-[405px] mt-2 flex max-w-[590px] flex-col gap-7"
-    >
-      <p class="font-medium">
-        Creating account for
-        <span class="text-accent-blue">&#64;{{ userName }}</span>
-      </p>
-
-      <fieldset class="flex flex-col gap-[14px]">
-        <tbc-email-input
-          [textControl]="email"
-          inputId="email"
-          label="Email"
-          placeholder="Email"
-          errorMessage="Please enter a valid email address"
-        ></tbc-email-input>
-
-        <tbc-password-input
-          [passwordControl]="password"
-          inputId="password"
-          label="Password"
-          placeholder="Password"
-        ></tbc-password-input>
-      </fieldset>
-
-      <div class="flex flex-col gap-[14px]">
-        <button
-          (click)="goToNextStep()"
-          class="rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
+        <a
+          href="https://tublian.com"
+          class="flex w-fit items-center gap-[3px] font-logo text-[13px] text-white"
         >
-          Create account
-        </button>
-
-        <p
-          class="relative flex items-center justify-center after:absolute after:left-0 after:top-1/2 after:-z-10 after:h-px after:w-full after:bg-horizontal-rule after:content-['']"
-        >
-          <span
-            class="w-fit bg-black px-2 text-center text-sm font-medium text-tertiary"
-          >
-            Or
-          </span>
+          <img src="../assets/logo.svg" alt="" aria-hidden="true" />
+          <span> Tublian </span>
+        </a>
+        <tbc-stepper [currentStep]="currentStep"></tbc-stepper>
+      </div>
+      <h1
+        class="mt-5 text-lg font-bold leading-[30px] text-white tablet:text-2xl desktop:mt-10 desktop:text-4xl desktop:leading-[52px]"
+      >
+        Create Account
+      </h1>
+      <div
+        class="mt-2 flex max-w-[590px] flex-col gap-7 tablet:mt-[14px] tablet:max-w-[405px]"
+      >
+        <p class="font-medium">
+          Creating account for
+          <span class="text-accent-blue">&#64;{{ userName }}</span>
         </p>
 
-        <button
-          class="bg-gradient group rounded-full p-px"
-          aria-labelledby="google-text"
-        >
-          <span
-            class="flex items-center justify-center gap-2 rounded-full bg-black px-2 py-3 font-medium text-white transition-all duration-300 ease-in-out group-hover:bg-transparent group-active:bg-transparent"
-          >
-            <img
-              src="../assets/google-logo.svg"
-              alt=""
-              aria-hidden="true"
-              class="h-6 w-6"
-            />
-            <span id="google-text">Sign up with Google</span>
-          </span>
-        </button>
-      </div>
-    </div>
-    <p class="mt-3 text-tertiary">
-      Already have an account?
-      <a
-        class="relative font-bold text-white after:absolute after:-bottom-px after:left-0 after:h-px after:w-full after:bg-white after:content-['']"
-        href="https://www.tublian.com/login"
-        >Log in</a
-      >
-    </p>
+        <fieldset class="flex flex-col gap-[14px]">
+          <tbc-email-input
+            [textControl]="email"
+            inputId="email"
+            label="Email"
+            placeholder="Email"
+            errorMessage="Please enter a valid email address"
+          ></tbc-email-input>
 
-    <div
-      class="tablet:flex absolute bottom-[47px] hidden w-fit items-start gap-5 text-tertiary"
-    >
+          <tbc-password-input
+            [passwordControl]="password"
+            inputId="password"
+            label="Password"
+            placeholder="Password"
+          ></tbc-password-input>
+        </fieldset>
+
+        <div class="flex flex-col gap-[14px]">
+          <button
+            (click)="goToNextStep()"
+            class="rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
+          >
+            Create account
+          </button>
+
+          <p
+            class="relative flex items-center justify-center after:absolute after:left-0 after:top-1/2 after:-z-10 after:h-px after:w-full after:bg-horizontal-rule after:content-['']"
+          >
+            <span
+              class="w-fit bg-black px-2 text-center text-sm font-medium text-tertiary"
+            >
+              Or
+            </span>
+          </p>
+
+          <button
+            class="bg-gradient group rounded-full p-px"
+            aria-labelledby="google-text"
+          >
+            <span
+              class="flex items-center justify-center gap-2 rounded-full bg-black px-2 py-3 font-medium text-white transition-all duration-300 ease-in-out group-hover:bg-transparent group-active:bg-transparent"
+            >
+              <img
+                src="../assets/google-logo.svg"
+                alt=""
+                aria-hidden="true"
+                class="h-6 w-6"
+              />
+              <span id="google-text">Sign up with Google</span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <p class="mt-3 text-tertiary">
+        Already have an account?
+        <a
+          class="relative font-bold text-white after:absolute after:-bottom-px after:left-0 after:h-px after:w-full after:bg-white after:content-['']"
+          href="https://www.tublian.com/login"
+          >Log in</a
+        >
+      </p>
+    </div>
+
+    <div class="mt-12 hidden w-fit items-start gap-5 text-tertiary tablet:flex">
       <a href="https://www.tublian.com/privacy">Privacy Policy</a>
       <a href="https://www.tublian.com/terms">Terms</a>
     </div>

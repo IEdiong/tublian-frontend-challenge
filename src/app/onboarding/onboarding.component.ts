@@ -99,17 +99,16 @@ export class OnboardingComponent implements OnInit {
   }
 
   goToNextStep(isValidStep: boolean): void {
-    if (isValidStep) {
-      if (this.currentStep === 1) {
-        this.userName = `${this.onboardingForm.value?.name?.firstName} ${this.onboardingForm.value?.name?.lastName}`;
-      }
-      this.currentStep++;
-    } else {
-      // TODO: set form error to true
+    if (!isValidStep) {
       console.log('Form is not valid, thus do something here');
+      // console.log(this.onboardingForm.value);
     }
 
-    console.log(this.onboardingForm.value);
+    if (this.currentStep === 1) {
+      this.userName = `${this.onboardingForm.value?.name?.firstName} ${this.onboardingForm.value?.name?.lastName}`;
+    }
+
+    this.currentStep++;
   }
 
   openModal(plan: PaymentPlan): void {

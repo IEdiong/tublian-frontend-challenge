@@ -104,11 +104,7 @@ export class PaymentModalComponent implements OnInit {
       console.log(this.paymentDetails.value);
       this.isPaymentSuccess = true;
     } else {
-      // this.expiryDate.markAsTouched();
-      // this.paymentDetails.markAllAsTouched();
-      // this.paymentDetails.updateValueAndValidity();
-      // console.log('Touched is:', this.country.touched);
-      // console.log('Invalid is:', this.country.invalid);
+      this.paymentDetails.markAllAsTouched();
     }
 
     document.documentElement.scrollTop = 0;
