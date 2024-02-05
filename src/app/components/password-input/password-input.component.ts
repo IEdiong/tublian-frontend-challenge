@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
   Component,
   DestroyRef,
   Input,
@@ -24,7 +23,6 @@ import { debounceTime, noop, tap } from 'rxjs';
   styles: [],
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

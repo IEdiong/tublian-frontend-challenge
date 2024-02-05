@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   DestroyRef,
   Input,
@@ -24,7 +23,6 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   styles: [],
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

@@ -29,6 +29,11 @@ export class CreateAccountComponent implements OnInit {
   }
 
   goToNextStep(): void {
-    this.proceed.emit(!this.form.invalid);
+    // Check form validity before continuing
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+    } else {
+      this.proceed.emit(!this.form.invalid);
+    }
   }
 }

@@ -57,7 +57,15 @@ export class OnboardingComponent implements OnInit {
       }),
       account: this.fb.nonNullable.group({
         email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(8)]],
+        password: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(8),
+            Validators.pattern(/[A-Z]/),
+            Validators.pattern(/[^\w\s]/),
+          ],
+        ],
       }),
       platformUsagePlan: this.fb.nonNullable.control<PlatformUsagePlan>(
         'team',
