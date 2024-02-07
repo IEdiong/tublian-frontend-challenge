@@ -27,7 +27,7 @@ Integrate the application with Stripe and develop the necessary backend API.
 
 | Purpose              | Stack       |
 | -------------------- | ----------- |
-| **Frontend**         | Angular     |
+| **Frontend**         | Angular 16  |
 | **Styling**          | TailwindCSS |
 | **Deployment**       | Netlify     |
 | **Version Control**  | Git, GitHub |
