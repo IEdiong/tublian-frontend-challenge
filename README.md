@@ -40,21 +40,22 @@ List any prerequisites or dependencies that need to be installed before running 
 
 - [Node.js](https://nodejs.org/) (v18.10.0 or higher)
 - [npm](https://www.npmjs.com/) (v8.19.4 or higher)
+- [Angular 16 cli](https://www.npmjs.com/package/@angular/cli) (`npm install -g @angular/cli@16`)
 
 Clone the project
 
 ```bash
-  git clone https://github.com/IEdiong/ng-tublian.git
+  git clone https://github.com/IEdiong/tublian-frontend-challenge.git
 
   or
   # For SSH
-  git clone git@github.com:IEdiong/ng-tublian.git
+  git clone git@github.com:IEdiong/tublian-frontend-challenge.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd ng-tublian
+  cd tublian-frontend-challenge
 ```
 
 Install dependencies
