@@ -1,53 +1,55 @@
-<div class="desktop:px-[103px] tablet:px-[52px] px-4">
+<div class="content-height">
+  <div class="px-4 tablet:px-[52px] desktop:px-[103px]">
+    <div
+      class="flex flex-col items-start justify-between gap-x-[19px] gap-y-3 tablet:flex-row desktop:items-center"
+    >
+      <a
+        href="https://tublian.com"
+        class="flex w-fit items-center gap-[3px] font-logo text-[13px] text-white"
+      >
+        <img src="../assets/logo.svg" alt="" aria-hidden="true" />
+        <span> Tublian </span>
+      </a>
+      <tbc-stepper [currentStep]="currentStep"></tbc-stepper>
+    </div>
+  </div>
+
   <div
-    class="tablet:flex-row desktop:items-center flex flex-col items-start justify-between gap-x-[19px] gap-y-3"
+    class="mt-5 flex flex-col items-center gap-7 px-4 tablet:mt-10 tablet:gap-y-10 desktop:px-[103px]"
   >
-    <a
-      href="https://tublian.com"
-      class="flex w-fit items-center gap-[3px] font-logo text-[13px] text-white"
+    <div class="flex flex-col gap-2 text-center tablet:gap-y-[14px]">
+      <h1
+        class="text-lg font-bold leading-[30px] text-white tablet:text-2xl tablet:leading-[34px] desktop:text-4xl desktop:leading-[52px]"
+      >
+        How are you planning to use Tublian?
+      </h1>
+      <p
+        class="text-sm font-medium tablet:mx-auto tablet:max-w-[379px] tablet:text-base desktop:max-w-full"
+      >
+        We will customize your experience based on your option.
+      </p>
+    </div>
+
+    <!-- Radio Buttons -->
+    <tbc-radio-group
+      name="plan"
+      [options]="options"
+      [formControl]="radioGroupControl"
     >
-      <img src="../assets/logo.svg" alt="" aria-hidden="true" />
-      <span> Tublian </span>
-    </a>
-    <tbc-stepper [currentStep]="currentStep"></tbc-stepper>
+    </tbc-radio-group>
+    <!-- Radio Buttons -->
+
+    <button
+      (click)="goToNextStep()"
+      class="w-full max-w-[405px] rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
+    >
+      Next
+    </button>
   </div>
 </div>
 
 <div
-  class="tablet:mt-10 desktop:px-[103px] tablet:gap-y-10 mt-5 flex flex-col items-center gap-7 px-4"
->
-  <div class="tablet:gap-y-[14px] flex flex-col gap-2 text-center">
-    <h1
-      class="desktop:text-4xl tablet:leading-[34px] desktop:leading-[52px] tablet:text-2xl text-lg font-bold leading-[30px] text-white"
-    >
-      How are you planning to use Tublian?
-    </h1>
-    <p
-      class="tablet:text-base tablet:max-w-[379px] desktop:max-w-full tablet:mx-auto text-sm font-medium"
-    >
-      We will customize your experience based on your option.
-    </p>
-  </div>
-
-  <!-- Radio Buttons -->
-  <tbc-radio-group
-    name="plan"
-    [options]="options"
-    [formControl]="radioGroupControl"
-  >
-  </tbc-radio-group>
-  <!-- Radio Buttons -->
-
-  <button
-    (click)="goToNextStep()"
-    class="w-full max-w-[405px] rounded-full bg-gold-300 px-4 py-2 font-medium capitalize text-black transition-all duration-300 ease-in-out hover:bg-gold-200 active:bg-gold-100"
-  >
-    Next
-  </button>
-</div>
-
-<div
-  class="tablet:flex absolute bottom-[47px] left-1/2 hidden w-fit -translate-x-1/2 items-start gap-5 text-tertiary"
+  class="mt-12 hidden w-full items-center justify-center gap-5 text-tertiary tablet:flex"
 >
   <a href="https://www.tublian.com/privacy">Privacy Policy</a>
   <a href="https://www.tublian.com/terms">Terms</a>
