@@ -25,10 +25,12 @@ Integrate the application with Stripe and develop the necessary backend API.
 
 ## Tech Stack
 
-- **Frontend**: Angular
-- **Styling**: TailwindCSS
-- **Deployment**: Netlify
-- **Version Control**: Git, GitHub
+| Purpose              | Stack       |
+| -------------------- | ----------- |
+| **Frontend**         | Angular     |
+| **Styling**          | TailwindCSS |
+| **Deployment**       | Netlify     |
+| **Version Control**  | Git, GitHub |
 
 ## Run Locally
 
