@@ -46,6 +46,7 @@ export class TextInputComponent implements ControlValueAccessor, OnInit {
   @Input() placeholder!: string;
   @Input() errorMessage!: string;
   @Input() type: string | null = null;
+  @Input() testId = '';
 
   expiryDateMask = new RegExp('^(0[1-9]|1[0-2])/(\\d{2})$');
 

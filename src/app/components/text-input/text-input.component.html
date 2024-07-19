@@ -35,6 +35,7 @@
     aria-hidden="true"
   />
   <span
+    data-cy="error-message"
     *ngIf="textControl.invalid && textControl.touched"
     class="text-sm font-medium text-semantic-red"
     >{{ errorMessage }}</span
@@ -159,6 +160,7 @@
 
 <ng-template #normal>
   <input
+    data-cy="testId"
     [formControl]="textControl"
     [id]="inputId"
     class="generic-input"
