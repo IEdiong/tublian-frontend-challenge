@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RadioGroupComponent } from './radio-group.component';
-import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
-import { forwardRef } from '@angular/core';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PlatformUsagePlan } from 'src/types';
 
 describe('RadioGroupComponent', () => {
   let component: RadioGroupComponent;
@@ -10,22 +10,29 @@ describe('RadioGroupComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RadioGroupComponent],
-      providers: [
-        {
-          provide: NG_VALUE_ACCESSOR,
-          useExisting: forwardRef(() => RadioGroupComponent),
-          multi: true,
-        },
-        ReactiveFormsModule,
-      ],
+      declarations: [RadioGroupComponent],
+      imports: [FormsModule, ReactiveFormsModule],
     });
     fixture = TestBed.createComponent(RadioGroupComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create', () => {
+    component = fixture.componentInstance;
+    component.options = [
+      {
+        label: 'label',
+        value: 'team',
+        imagePath: '../../assets/team.png',
+        description: 'description',
+      },
+    ];
+    component.name = 'testRadioGroup';
+    component.formControl = new FormControl<PlatformUsagePlan>('team', {
+      nonNullable: true,
+    });
+
+    fixture.detectChanges();
+
     expect(component).toBeTruthy();
   });
 });

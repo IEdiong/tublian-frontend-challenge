@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PasswordInputComponent } from './password-input.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 describe('PasswordInputComponent', () => {
   let component: PasswordInputComponent;
@@ -9,15 +9,18 @@ describe('PasswordInputComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PasswordInputComponent],
-      schemas: [NO_ERRORS_SCHEMA],
+      imports: [PasswordInputComponent],
     });
     fixture = TestBed.createComponent(PasswordInputComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create', () => {
+    component = fixture.componentInstance;
+    component.passwordControl = new FormControl<string>('firstName', {
+      nonNullable: true,
+    });
+    fixture.detectChanges();
+
     expect(component).toBeTruthy();
   });
 });

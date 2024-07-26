@@ -1,10 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TextInputComponent } from './text-input.component';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 describe('TextInputComponent', () => {
   let component: TextInputComponent;
@@ -12,22 +9,16 @@ describe('TextInputComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        TextInputComponent,
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        NgxMaskDirective,
-        NgxMaskPipe,
-      ],
-      schemas: [NO_ERRORS_SCHEMA],
+      imports: [TextInputComponent],
     });
     fixture = TestBed.createComponent(TextInputComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create', () => {
+    component = fixture.componentInstance;
+    component.textControl = new FormControl('firstName', { nonNullable: true });
+    fixture.detectChanges();
+
     expect(component).toBeTruthy();
   });
 });

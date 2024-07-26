@@ -50,9 +50,6 @@ export class TextInputComponent implements ControlValueAccessor, OnInit {
 
   expiryDateMask = new RegExp('^(0[1-9]|1[0-2])/(\\d{2})$');
 
-  get textName() {
-    return this.textControl;
-  }
   formControl = new FormControl<string>('', { nonNullable: true });
 
   destroyRef: DestroyRef = inject(DestroyRef);
