@@ -31,6 +31,12 @@
       }
     },
     {
+      "files": ["*.spec.ts"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
       "files": ["*.js"],
       "parserOptions": {
         "ecmaVersion": "latest"
